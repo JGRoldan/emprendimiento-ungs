@@ -1,4 +1,5 @@
 import {handlerDOM} from './helper/menu.js';
+import rubrosENUM from './helper/rubros.js';
 import dataCard from './helper/card-data.js';
 
 const dynamicUpdateCard = () =>{
@@ -40,11 +41,26 @@ const generateCardHTML = (redesHTML, ratingStars, {emprendimiento, nombre, telef
     `
 }
 
+const dynamicUpdateRubros = () =>{
+
+    const selectRubros = document.getElementById("rubros");
+
+    for (const rubro in rubrosENUM) {
+        if (rubrosENUM.hasOwnProperty(rubro)) {
+            const opcion = document.createElement("option");
+            opcion.value = rubro;
+            opcion.textContent = rubrosENUM[rubro];
+            selectRubros.appendChild(opcion);
+        }
+    }
+
+}
+
 document.addEventListener('DOMContentLoaded', ()=>{
     if(localStorage.getItem('adminLogin') == "true"){
         handlerDOM()
     }
 
     dynamicUpdateCard()
-
+    dynamicUpdateRubros()
 })

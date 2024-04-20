@@ -1,4 +1,4 @@
-.pendiente-container {
+.pendiente-container, .deshabilitado-container {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -59,6 +59,12 @@ aside h2 {margin-bottom: 20px;}
 }
 .rechazar-btn:hover {
     background-color: #b30000;
+}
+.habilitar-btn{
+    background-color: #04aa4f;
+}
+.habilitar-btn:hover{
+    background-color: #04AA6D;
 }
 
 @media (max-width: 768px) {

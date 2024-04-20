@@ -1,0 +1,20 @@
+@import url("./helper/header.css");
+@import url("./helper/filter.css");
+@import url("./helper/card.css");
+@import url("./helper/footer.css");
+@import url("./helper/login.css");
+@import url("./helper/pendientes.css");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(250, 250, 250);
+}

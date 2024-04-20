@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📌Portal Emprendimientos</title>
+    <link rel="stylesheet" href="./assets/styles/style.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <nav>
+                <div>
+                    <img src="" alt="Logo">
+                </div>
+                <ul>
+                    <a href="#">
+                        <li>Home</li>
+                    </a>
+                    <a href="#" id="registerLink">
+                        <li>Register</li>
+                    </a>
+                    <a href="./assets/pages/login.html" id="loginLink">
+                        <li>Login</li>
+                    </a>
+                    <a href="./assets/pages/pendientes.html" id="pendingLink" style="display:none;">
+                        <li>Pendientes</li>
+                    </a>
+                    <a href="#" id="logoutLink" style="display:none;">
+                        <li>Logout</li>
+                    </a>
+                    <li id="username" style="display:none;"></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- filters and cards -->
+        <section class="filter-card-container">
+            <!-- filters -->
+            <aside>
+                <h3>Busca el emprendimiento que mas te guste</h3>
+                <form action="">
+                    <div class="form-group">
+                      <label for="rubro">Rubro</label>
+                      <select name="rubro" id="emprendimiento">
+                        <option value="">ALL</option>
+                        <option value="rubro1">Rubro 1</option>
+                        <option value="rubro2">Rubro 2</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="valoracion">Valoración</label>
+                      <select name="valoracion" id="valoracion">
+                        <option value="">ALL</option>
+                        <option value="valoracion1">⭐</option>
+                        <option value="valoracion2">⭐⭐</option>
+                          <option value="valoracion3">⭐⭐⭐</option>
+                          <option value="valoracion4">⭐⭐⭐⭐</option>
+                          <option value="valoracion5">⭐⭐⭐⭐⭐</option>
+                      </select>
+                    </div>
+                    <button type="submit">FILTRAR</button>
+                </form>
+            </aside>
+            <div class="card-container">
+                <div class="card">
+                        <h3>EMPRENDIMIENTO 1</h3>
+                        <p>John Doe</p>
+                        <p>Contacto: 4564654564</p>
+                        <p>⭐⭐⭐⭐⭐</p>
+                </div>
+                <div class="card">
+                        <h3>EMPRENDIMIENTO 2</h3>
+                        <p>John Doe</p>
+                        <p>Contacto: 4564654564</p>
+                        <p>⭐</p>
+                </div>
+                <div class="card">
+                        <h3>EMPRENDIMIENTO 3</h3>
+                        <p>John Doe</p>
+                        <p>Contacto: 4564654564</p>
+                        <p>⭐⭐⭐</p>
+                </div>
+                <div class="card">
+                        <h3>EMPRENDIMIENTO 4</h3>
+                        <p>John Doe</p>
+                        <p>Contacto: 4564654564</p>
+                        <p>⭐⭐</p>
+                </div>     
+                <div class="card">
+                    <h3>EMPRENDIMIENTO 5</h3>
+                    <p>John Doe</p>
+                    <p>Contacto: 4564654564</p>
+                    <p>⭐⭐⭐</p>
+                </div>  
+                <div class="card">
+                    <h3>EMPRENDIMIENTO 6</h3>
+                    <p>John Doe</p>
+                    <p>Contacto: 4564654564</p>
+                    <p>⭐⭐</p>
+                </div>  
+                <div class="card">
+                    <h3>EMPRENDIMIENTO 7</h3>
+                    <p>John Doe</p>
+                    <p>Contacto: 4564654564</p>
+                    <p>⭐</p>
+                </div>  
+                <div class="card">
+                    <h3>EMPRENDIMIENTO 8</h3>
+                    <p>John Doe</p>
+                    <p>Contacto: 4564654564</p>
+                    <p>⭐⭐⭐⭐</p>
+                </div>     
+                <div class="card">
+                    <h3>EMPRENDIMIENTO 9</h3>
+                    <p>John Doe</p>
+                    <p>Contacto: 4564654564</p>
+                    <p>⭐⭐⭐⭐⭐</p>
+            </div>
+            <div class="card">
+                    <h3>EMPRENDIMIENTO 10</h3>
+                    <p>John Doe</p>
+                    <p>Contacto: 4564654564</p>
+                    <p>⭐</p>
+            </div>
+            <div class="card">
+                    <h3>EMPRENDIMIENTO 11</h3>
+                    <p>John Doe</p>
+                    <p>Contacto: 4564654564</p>
+                    <p>⭐⭐⭐</p>
+            </div>
+            <div class="card">
+                    <h3>EMPRENDIMIENTO 12</h3>
+                    <p>John Doe</p>
+                    <p>Contacto: 4564654564</p>
+                    <p>⭐⭐⭐</p>
+            </div>     
+            <div class="card">
+                <h3>EMPRENDIMIENTO 13</h3>
+                <p>John Doe</p>
+                <p>Contacto: 4564654564</p>
+                <p>⭐⭐⭐</p>
+            </div>  
+            <div class="card">
+                <h3>EMPRENDIMIENTO 14</h3>
+                <p>John Doe</p>
+                <p>Contacto: 4564654564</p>
+                <p>⭐⭐</p>
+            </div>  
+            <div class="card">
+                <h3>EMPRENDIMIENTO 15</h3>
+                <p>John Doe</p>
+                <p>Contacto: 4564654564</p>
+                <p>⭐</p>
+            </div>  
+            <div class="card">
+                <h3>EMPRENDIMIENTO 16</h3>
+                <p>John Doe</p>
+                <p>Contacto: 4564654564</p>
+                <p>⭐⭐⭐⭐</p>
+            </div>
+            <div class="card">
+                <h3>EMPRENDIMIENTO 17</h3>
+                <p>John Doe</p>
+                <p>Contacto: 4564654564</p>
+                <p>⭐⭐⭐⭐⭐</p>
+        </div>
+        <div class="card">
+                <h3>EMPRENDIMIENTO 18</h3>
+                <p>John Doe</p>
+                <p>Contacto: 4564654564</p>
+                <p>⭐</p>
+        </div>
+        <div class="card">
+                <h3>EMPRENDIMIENTO 19</h3>
+                <p>John Doe</p>
+                <p>Contacto: 4564654564</p>
+                <p>⭐⭐⭐</p>
+        </div>
+        <div class="card">
+                <h3>EMPRENDIMIENTO 20</h3>
+                <p>John Doe</p>
+                <p>Contacto: 4564654564</p>
+                <p>⭐</p>
+        </div>     
+        <div class="card">
+            <h3>EMPRENDIMIENTO 21</h3>
+            <p>John Doe</p>
+            <p>Contacto: 4564654564</p>
+            <p>⭐⭐⭐</p>
+        </div>  
+        <div class="card">
+            <h3>EMPRENDIMIENTO 22</h3>
+            <p>John Doe</p>
+            <p>Contacto: 4564654564</p>
+            <p>⭐⭐</p>
+        </div>  
+        <div class="card">
+            <h3>EMPRENDIMIENTO 23</h3>
+            <p>John Doe</p>
+            <p>Contacto: 4564654564</p>
+            <p>⭐</p>
+        </div>  
+        <div class="card">
+            <h3>EMPRENDIMIENTO 24</h3>
+            <p>John Doe</p>
+            <p>Contacto: 4564654564</p>
+            <p>⭐⭐⭐⭐</p>
+        </div>         
+            </div>
+        </section>
+        <footer>
+            ©2024 Ing.Soft.I - Designed by Sebastian | Franco | Mauro | Gaston 
+        </footer>
+    </div>
+    <script src="./assets/script/index.js" type="module" defer></script>
+    <script src="./assets/script/logout.js"></script>
+</body>
+</html>

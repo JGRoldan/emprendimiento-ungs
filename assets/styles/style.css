@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import url("./helper/header.css");
 @import url("./helper/filter.css");
 @import url("./helper/card.css");
 @import url("./helper/footer.css");
 @import url("./helper/login.css");
 @import url("./helper/pendientes.css");
+
 
 *{
     margin: 0;
@@ -19,3 +21,29 @@
     background-color: rgb(250, 250, 250);
 }
 ul li{list-style: none;}
+
+.donation-list{
+    overflow: hidden;
+    margin: 2rem 0;
+}
+.wrapper{
+    display: flex; 
+    width: 100%;
+    gap: 50px;   
+    animation: scroll 15s linear infinite;
+}
+.wrapper a{
+    text-decoration: none;
+    color:black;
+}
+.wrapper a p{
+    width: 500px;
+    font-size: 1.4rem;
+    font-family: "Playfair Display", serif;
+}
+
+@keyframes scroll {
+    to{
+        translate: calc(-4*15rem);
+    }
+}

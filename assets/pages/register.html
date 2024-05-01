@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <nav>
+                <div>
+                    <img src="" alt="Logo">
+                </div>
+                <ul>
+                    <a href="../../index.html">
+                        <li>Home</li>
+                    </a>
+                    <a href="#" id="registerLink">
+                        <li>Register</li>
+                    </a>
+                </ul>
+            </nav>
+        </header>
+        <section class="login-container">
+            <div class="form">
+                <form class="login-form" id="login-form">
+                    <h4 class="datos">Ingresa tus datos personales</h4>
+                    <input type="email" placeholder="Ingrese su email" id="email" required/>
+                    <input type="password" placeholder="Ingrese su contraseña" id="psw" required/>
+
+                    <h4 class="datos">Ingresa los datos de tu emprendimiento</h4>
+                    <input type="text" placeholder="Nombre del emprendimiento" id="nombre-emprendimiento" required/>
+                    <input type="text" placeholder="Dirección: calle numero, partido" id="psw2" required/>
+                    <div>
+                        <label for="direccion-checkbox">Dirección visible</label>
+                        <input type="checkbox" name="direccion-checkbox" id="direccion-checkbox"/>
+                    </div>
+                    <div>
+                        <label for="rubro-opt">Rubro:</label>
+                        <select id="rubro-opt">
+                            <option>Rubro 1</option>
+                            <option>Rubro 2</option>
+                            <option>Rubro 3</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="horario-trabajo">Seleccione el rango horario:</label>
+                        <input type="time" name="horario-trabajo" id="">
+                        <input type="time" name="horario-trabajo" id="">
+                    </div>
+                    <div>
+                        <label for="logo-emprendimiento">Seleccione logo o imagen (no es obligatorio):</label>
+                        <input type="file" src="" alt="No es obligatorio">
+                    </div>
+                    <button type="submit" id="submit-login-btn">Registrarse</button>
+                    <p class="message">Ya estas registrado? <a href="./login.html">Inicia sesión</a></p>
+                    </form>
+            </div>
+        </section>
+        <footer>
+            ©2024 Ing.Soft.I - Designed by Sebastian | Franco | Mauro | Gaston 
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donaciones 💰</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <div class="main-container login-main">
+        <header>
+            <nav>
+                <div>
+                    <img src="" alt="Logo">
+                </div>
+                <ul>
+                    <a href="../../index.html">
+                        <li>Home</li>
+                    </a>
+                    <a href="#" id="logoutLink" >
+                        <li>Logout</li>
+                    </a>
+                    <li id="username">NOMBRE USER</li>
+                </ul>
+            </nav>
+        </header>
+        <section class="login-container">
+            <h1>Elegi un método de pago</h1>
+            <div>
+                <button class="btn-pagos btn-cuenta-pago">CUENTA PAGO</button>
+                <button class="btn-pagos btn-pago-net">PAGO NET</button>
+            </div>
+        </section>
+        <!-- Modal para Cuenta Pago -->
+        <div id="modal-cuenta-pago" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Información sobre Cuenta Pago...</p>
+            </div>
+        </div>
+
+        <!-- Modal para Pago Net -->
+        <div id="modal-pago-net" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Información sobre Pago Net...</p>
+            </div>
+        </div>
+        <footer>
+            ©2024 Ing.Soft.I - Designed by Sebastian | Franco | Mauro | Gaston 
+        </footer>
+        <script src="../script/donaciones.js"></script>
+    </div>
+</body>
+</html>

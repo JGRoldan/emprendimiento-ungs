@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrarse</title>
     <link rel="stylesheet" href="../styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="main-container">
@@ -28,11 +29,11 @@
                 <form class="login-form" id="login-form">
                     <h4 class="datos">Ingresa tus datos personales</h4>
                     <input type="email" placeholder="Ingrese su email" id="email" required/>
-                    <input type="password" placeholder="Ingrese su contraseña" id="psw" required/>
+                    <input type="password" placeholder="Ingrese su contraseña" id="password" required/>
 
                     <h4 class="datos">Ingresa los datos de tu emprendimiento</h4>
                     <input type="text" placeholder="Nombre del emprendimiento" id="nombre-emprendimiento" required/>
-                    <input type="text" placeholder="Dirección: calle numero, partido" id="psw2" required/>
+                    <input type="text" placeholder="Dirección: calle numero, partido" id="direccion" required/>
                     <div>
                         <label for="direccion-checkbox">Dirección visible</label>
                         <input type="checkbox" name="direccion-checkbox" id="direccion-checkbox"/>
@@ -47,12 +48,12 @@
                     </div>
                     <div>
                         <label for="horario-trabajo">Seleccione el rango horario:</label>
-                        <input type="time" name="horario-trabajo" id="">
-                        <input type="time" name="horario-trabajo" id="">
+                        <input type="time" name="inicio-trabajo" id="inicio-trabajo" required>
+                        <input type="time" name="fin-trabajo" id="fin-trabajo" required>
                     </div>
                     <div>
                         <label for="logo-emprendimiento">Seleccione logo o imagen (no es obligatorio):</label>
-                        <input type="file" src="" alt="No es obligatorio">
+                        <input type="file" src="" alt="No es obligatorio" id="logo-emprendimiento">
                     </div>
                     <button type="submit" id="submit-login-btn">Registrarse</button>
                     <p class="message">Ya estas registrado? <a href="./login.html">Inicia sesión</a></p>
@@ -63,5 +64,6 @@
             ©2024 Ing.Soft.I - Designed by Sebastian | Franco | Mauro | Gaston 
         </footer>
     </div>
+    <script src="../script/register.js"></script>
 </body>
 </html>

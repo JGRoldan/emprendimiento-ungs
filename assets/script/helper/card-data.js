@@ -9,6 +9,7 @@ let dataCard = [
         redes:{
             instagram: "@alvaro_quintero",
             facebook: "alvaro quintero",
+            tiktok:"asd"
         },
         donation:true
     },
@@ -35,6 +36,7 @@ let dataCard = [
         redes:{
             instagram: "@lavanderiaclean",
             facebook: "Lavandería Clean",
+            youtube: "-"
         },
         donation:false
     },
@@ -48,6 +50,7 @@ let dataCard = [
         redes:{
             instagram: "@armoniamusical",
             facebook: "Academia Musical Armonía",
+            tiktok:"asd"
         },
         donation:false
     },
@@ -61,6 +64,8 @@ let dataCard = [
         redes:{
             instagram: "@jardinesverdes",
             facebook: "Jardines Verdes",
+            youtube: "-",
+            tiktok:"asd"
         },
         donation:false
     },
@@ -113,6 +118,7 @@ let dataCard = [
         redes:{
             instagram: "@maderarte",
             facebook: "Maderarte",
+            youtube:"-"
         },
         donation:false
     }

@@ -24,11 +24,22 @@
     gap:10px;
     border-radius: 10px;
     padding: 10px;
+}
+
+.card-donation-false{
     background-color: rgb(255, 255, 255);
     box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.18);
     -webkit-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.18);
     -moz-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.18);
 }
+.card-donation-true{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 10px 10px 5px -4px rgb(255, 242, 0);
+    -webkit-box-shadow: 10px 10px 5px -4px rgb(255, 242, 0);
+    -moz-box-shadow: 10px 10px 5px -4px rgb(255, 242, 0);
+}
+
+
 .card-container .card h3{
     font-size: 1.3rem;
 }

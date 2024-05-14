@@ -5,9 +5,9 @@ import dataCard from './helper/card-data.js';
 const dynamicUpdateCard = () =>{
     const cardContainer = document.querySelector('.card-container')
 
-    dataCard.map( ({emprendimiento, nombre, telefono, mail, direccion, redes}) => {
+    dataCard.map( ({emprendimiento, nombre, telefono, mail, direccion, redes, donation}) => {
         let redesHTML = redesValidation(redes)
-        const cardHTML = generateCardHTML(redesHTML, {emprendimiento, nombre, telefono, mail, direccion})
+        const cardHTML = generateCardHTML(redesHTML, donation, {emprendimiento, nombre, telefono, mail, direccion})
 
         cardContainer.innerHTML += cardHTML
     })
@@ -26,17 +26,31 @@ const redesValidation = (redes) =>{
     }
 }
 
-const generateCardHTML = (redesHTML, {emprendimiento, nombre, telefono, mail, direccion}) => {
-    return `
-    <div class="card">
-        <h3>${emprendimiento}</h3>
-        <p style="color:#626567 "> <b>Nombre:</b> ${nombre}</p>
-        <p style="color:#626567 "> <b>Whatsapp:</b> ${telefono}</p>
-        <p style="color:#626567 "> <b>Mail:</b> ${mail}</p>
-        <p style="color:#626567 "> <b>Dirección:</b> ${direccion}</p>
-        ${redesHTML}
-    </div>
-    `
+const generateCardHTML = (redesHTML, donation, {emprendimiento, nombre, telefono, mail, direccion}) => {
+    return donation 
+        ?
+            `
+            <div class="card card-donation-true">
+                <h3>${emprendimiento}</h3>
+                <p style="color:#626567 "> <b>Nombre:</b> ${nombre}</p>
+                <p style="color:#626567 "> <b>Whatsapp:</b> ${telefono}</p>
+                <p style="color:#626567 "> <b>Mail:</b> ${mail}</p>
+                <p style="color:#626567 "> <b>Dirección:</b> ${direccion}</p>
+                ${redesHTML}
+            </div>`
+
+        : 
+            `
+            <div class="card card-donation-false">
+                <h3>${emprendimiento}</h3>
+                <p style="color:#626567 "> <b>Nombre:</b> ${nombre}</p>
+                <p style="color:#626567 "> <b>Whatsapp:</b> ${telefono}</p>
+                <p style="color:#626567 "> <b>Mail:</b> ${mail}</p>
+                <p style="color:#626567 "> <b>Dirección:</b> ${direccion}</p>
+                ${redesHTML}
+            </div>
+            `;
+
 }
 
 const dynamicUpdateRubros = () =>{

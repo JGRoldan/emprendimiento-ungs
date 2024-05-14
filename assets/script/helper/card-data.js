@@ -9,7 +9,8 @@ let dataCard = [
         redes:{
             instagram: "@alvaro_quintero",
             facebook: "alvaro quintero",
-        }
+        },
+        donation:true
     },
     {
         emprendimiento: "Catering y comida a domicilio",
@@ -21,7 +22,8 @@ let dataCard = [
         redes:{
             instagram: "@saborescaseros",
             facebook: "Sabores Caseros",
-        }
+        },
+        donation:false
     },
     {
         emprendimiento: "Servicio de lavandería",
@@ -33,7 +35,8 @@ let dataCard = [
         redes:{
             instagram: "@lavanderiaclean",
             facebook: "Lavandería Clean",
-        }
+        },
+        donation:false
     },
     {
         emprendimiento: "Clases de música",
@@ -45,7 +48,8 @@ let dataCard = [
         redes:{
             instagram: "@armoniamusical",
             facebook: "Academia Musical Armonía",
-        }
+        },
+        donation:false
     },
     {
         emprendimiento: "Servicio de jardinería",
@@ -57,7 +61,8 @@ let dataCard = [
         redes:{
             instagram: "@jardinesverdes",
             facebook: "Jardines Verdes",
-        }
+        },
+        donation:false
     },
     {
         emprendimiento: "Taller de reparación de bicicletas",
@@ -69,7 +74,8 @@ let dataCard = [
         redes:{
             instagram: "@bicifix",
             facebook: "BiciFix",
-        }
+        },
+        donation:false
     },
     {
         emprendimiento: "Tutoría y apoyo escolar",
@@ -81,7 +87,8 @@ let dataCard = [
         redes:{
             instagram: "@educatutores",
             facebook: "EducaTutores",
-        }
+        },
+        donation:false
     },
     {
         emprendimiento: "Servicio de fotografía profesional",
@@ -93,7 +100,8 @@ let dataCard = [
         redes:{
             instagram: "@instantaneascreativas",
             facebook: "Instantáneas Creativas",
-        }
+        },
+        donation:false
     },
     {
         emprendimiento: "Taller de carpintería y mueblería",
@@ -105,7 +113,8 @@ let dataCard = [
         redes:{
             instagram: "@maderarte",
             facebook: "Maderarte",
-        }
+        },
+        donation:false
     }
 ]
 

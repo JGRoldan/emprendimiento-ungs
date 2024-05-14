@@ -4,7 +4,6 @@ let dataCard = [
         nombre: "Alvaro Quintero",
         telefono: "123456789",
         mail:"alvaroq@mail.com",
-        valoracion: 5,
         direccion: "Calle Falsa 123",
         detalle: "Realizo todo tipo de mantenimiento en la zona de San Miguel",
         redes:{
@@ -17,7 +16,6 @@ let dataCard = [
         nombre: "Sabores Caseros",
         telefono: "987654321",
         mail:"saborescaseros@mail.com",
-        valoracion: 4,
         direccion: "Calle Falsa 213",
         detalle: "Ofrecemos deliciosas comidas caseras entregadas directamente a tu puerta.",
         redes:{
@@ -30,7 +28,6 @@ let dataCard = [
         nombre: "Lavandería Clean",
         telefono: "456123789",
         mail:"lavanderiaclean@mail.com",
-        valoracion: 3,
         direccion: "Calle Falsa 132",
         detalle: "Lavamos y planchamos tu ropa con cuidado y eficiencia.",
         redes:{
@@ -43,7 +40,6 @@ let dataCard = [
         nombre: "Academia Musical Armonía",
         telefono: "789456123",
         mail:"armonia@mail.com",
-        valoracion: 5,
         direccion: "Calle Falsa 312",
         detalle: "Aprende a tocar instrumentos musicales con profesores experimentados.",
         redes:{
@@ -56,7 +52,6 @@ let dataCard = [
         nombre: "Jardines Verdes",
         telefono: "321654987",
         mail:"jardinesverdes@mail.com",
-        valoracion: 4,
         direccion: "Calle Falsa 231",
         detalle: "Diseño, mantenimiento y cuidado de jardines para hogares y empresas.",
         redes:{
@@ -69,7 +64,6 @@ let dataCard = [
         nombre: "BiciFix",
         telefono: "654987321",
         mail:"bicifix@mail.com",
-        valoracion: 4,
         direccion: "Calle Falsa 213",
         detalle: "Reparamos y personalizamos bicicletas para que vuelvas a rodar por la ciudad.",
         redes:{
@@ -82,7 +76,6 @@ let dataCard = [
         nombre: "EducaTutores",
         telefono: "987321654",
         mail:"educatutores@mail.com",
-        valoracion: 5,
         direccion: "Calle Falsa 321",
         detalle: "Brindamos clases particulares y apoyo en todas las materias escolares.",
         redes:{
@@ -95,7 +88,6 @@ let dataCard = [
         nombre: "Instantáneas Creativas",
         telefono: "147258369",
         mail:"instantaneas@mail.com",
-        valoracion: 4,
         direccion: "Calle Falsa 231",
         detalle: "Capturamos tus momentos especiales con creatividad y profesionalismo.",
         redes:{
@@ -108,7 +100,6 @@ let dataCard = [
         nombre: "Maderarte",
         telefono: "369258147",
         mail:"info@maderarte.com",
-        valoracion: 4,
         direccion: "Calle Falsa 312",
         detalle: "Creamos muebles a medida y realizamos reparaciones de carpintería con materiales de alta calidad.",
         redes:{

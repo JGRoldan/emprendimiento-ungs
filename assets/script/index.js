@@ -5,10 +5,9 @@ import dataCard from './helper/card-data.js';
 const dynamicUpdateCard = () =>{
     const cardContainer = document.querySelector('.card-container')
 
-    dataCard.map( ({emprendimiento, nombre, telefono, mail,valoracion, direccion, redes}) => {
-        const ratingStars = '⭐'.repeat(valoracion)
+    dataCard.map( ({emprendimiento, nombre, telefono, mail, direccion, redes}) => {
         let redesHTML = redesValidation(redes)
-        const cardHTML = generateCardHTML(redesHTML,ratingStars, {emprendimiento, nombre, telefono, mail, direccion})
+        const cardHTML = generateCardHTML(redesHTML, {emprendimiento, nombre, telefono, mail, direccion})
 
         cardContainer.innerHTML += cardHTML
     })
@@ -27,7 +26,7 @@ const redesValidation = (redes) =>{
     }
 }
 
-const generateCardHTML = (redesHTML, ratingStars, {emprendimiento, nombre, telefono, mail, direccion}) => {
+const generateCardHTML = (redesHTML, {emprendimiento, nombre, telefono, mail, direccion}) => {
     return `
     <div class="card">
         <h3>${emprendimiento}</h3>
@@ -35,7 +34,6 @@ const generateCardHTML = (redesHTML, ratingStars, {emprendimiento, nombre, telef
         <p style="color:#626567 "> <b>Whatsapp:</b> ${telefono}</p>
         <p style="color:#626567 "> <b>Mail:</b> ${mail}</p>
         <p style="color:#626567 "> <b>Dirección:</b> ${direccion}</p>
-        <p>${ratingStars}</p>
         ${redesHTML}
     </div>
     `

@@ -56,7 +56,7 @@ const handlerAceptarButton = (aceptarButtons, pendingUsers) =>{
             })
 
             const acceptedUsers = JSON.parse(localStorage.getItem('usersAccepted')) || []
-
+            
             updatedUsers.forEach(user => {
                 if (user.isAcepted) {
                     acceptedUsers.push(user)

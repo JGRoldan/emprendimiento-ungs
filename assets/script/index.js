@@ -72,7 +72,13 @@ const dynamicUpdateRubros = () =>{
 
 document.addEventListener('DOMContentLoaded', ()=>{
     if(localStorage.getItem('adminLogin') == "true"){
-        handlerDOM()
+        handlerDOM('ADMIN')
+    }
+
+    const userLogin = JSON.parse(localStorage.getItem('userLogin')) || []
+
+    if(localStorage.getItem('adminLogin') == "false" && userLogin.isLogged == true){
+        handlerDOM(userLogin.email.split('@')[0])
     }
 
     dynamicUpdateCard()

@@ -21,7 +21,7 @@ const handlerSubmit = () => {
 
     if (email === adminCredentials.USER && password === adminCredentials.PASSWORD) {
         localStorage.setItem('adminLogin', true)
-        handleSuccessfulLogin()
+        handleSuccessfulLogin('ADMIN')
         return;
     }
 
@@ -30,15 +30,16 @@ const handlerSubmit = () => {
     const user = acceptedUsers.find(user => user.email === email && user.password === password)
 
     if (user) {
-        handleSuccessfulLogin()
+        handleSuccessfulLogin('USER')
+        updateUserLogin(email, password, true)
         return
     }
 
     handleInvalidCredentials()
 }
 
-const handleSuccessfulLogin = () => {
-    handlerDOM();
+const handleSuccessfulLogin = (name) => {
+    handlerDOM(name);
     Swal.fire({
         title: "Credenciales Válidas",
         text: "Redirigiendo a la página principal",
@@ -61,6 +62,15 @@ const handleInvalidCredentials = () => {
         timer: 1500
     });
     resetFields()
+}
+
+const updateUserLogin = (email, password, isLogged) => {
+    const userLogin = {
+        email,
+        password,
+        isLogged
+    };
+    localStorage.setItem('userLogin', JSON.stringify(userLogin))
 }
 
 const resetFields = () =>{

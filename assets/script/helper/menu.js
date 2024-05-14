@@ -1,6 +1,6 @@
-const handlerDOM = () =>{
+const handlerDOM = (name) =>{
     const usernameElement = document.getElementById("username");
-    usernameElement.innerHTML = "ADMIN"
+    usernameElement.innerHTML = name
     usernameElement.style.display = "inline"
 
     const logoutLink = document.getElementById("logoutLink")

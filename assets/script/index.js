@@ -2,10 +2,37 @@ import {handlerDOM} from './helper/menu.js';
 import rubrosENUM from './helper/rubros.js';
 import dataCard from './helper/card-data.js';
 
-const dynamicUpdateCard = () =>{
+const filteredCards = () =>{
+    const formMain = document.getElementById('form-main');
+
+    formMain.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const destacado = document.getElementById('destacado').value
+        let filteredData = [];
+
+        if (destacado === "DESTACADO") {
+            filteredData = dataCard.filter(({ donation }) => {
+                return donation === true
+            })
+        } else if (destacado === "TODOS") {
+            filteredData = dataCard
+        }
+        else if (destacado === "NODESTACADO") {
+            filteredData = dataCard.filter(({ donation }) => {
+                return donation === false
+            })
+        }
+    
+        dynamicUpdateCard(filteredData)
+    });
+}
+
+const dynamicUpdateCard = (filteredData) =>{
     const cardContainer = document.querySelector('.card-container')
 
-    dataCard.map( ({emprendimiento, nombre, telefono, mail, direccion, redes, donation}) => {
+    cardContainer.innerHTML = ''
+
+    filteredData.map( ({emprendimiento, nombre, telefono, mail, direccion, redes, donation}) => {
         let redesHTML = redesValidation(redes)
         const cardHTML = generateCardHTML(redesHTML, donation, {emprendimiento, nombre, telefono, mail, direccion})
 
@@ -81,6 +108,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         handlerDOM(userLogin.email.split('@')[0])
     }
 
-    dynamicUpdateCard()
+    dynamicUpdateCard(dataCard)
+    filteredCards()
     dynamicUpdateRubros()
 })

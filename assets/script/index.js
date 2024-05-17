@@ -56,6 +56,12 @@ const redesValidation = (redes) =>{
 
 
 const generateCardHTML = (redesHTML, donation, {emprendimiento, nombre, telefono, mail, direccion}) => {
+
+    const isAdminLoggedIn = localStorage.getItem('adminLogin') === "true"
+    const deshabilitarButtonHTML = isAdminLoggedIn 
+        ? '<button class="btn-generic deshabilitar-btn">Deshabilitar</button>' 
+        : ''
+
     return donation 
         ?
             `
@@ -66,6 +72,10 @@ const generateCardHTML = (redesHTML, donation, {emprendimiento, nombre, telefono
                 <p style="color:#626567 "> <b>Mail:</b> ${mail}</p>
                 <p style="color:#626567 "> <b>Dirección:</b> ${direccion}</p>
                 ${redesHTML}
+                <div>
+                    <button type="submit">Ver</button>
+                    ${deshabilitarButtonHTML}
+                </div>
             </div>`
 
         : 
@@ -77,6 +87,10 @@ const generateCardHTML = (redesHTML, donation, {emprendimiento, nombre, telefono
                 <p style="color:#626567 "> <b>Mail:</b> ${mail}</p>
                 <p style="color:#626567 "> <b>Dirección:</b> ${direccion}</p>
                 ${redesHTML}
+                <div>
+                    <button type="submit">Ver</button>
+                    ${deshabilitarButtonHTML}
+                </div>
             </div>
             `;
 

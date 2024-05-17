@@ -1,6 +1,7 @@
 import {handlerDOM} from './helper/menu.js';
 import rubrosENUM from './helper/rubros.js';
 import dataCard from './helper/card-data.js';
+import getMailOnClick from './mapa/onVerClick.js';
 
 const filteredCards = () =>{
     const formMain = document.getElementById('form-main');
@@ -8,7 +9,10 @@ const filteredCards = () =>{
     formMain.addEventListener('submit', (e) => {
         e.preventDefault()
         const destacado = document.getElementById('destacado').value
+        const rubro = document.getElementById('rubros').value
+        
         let filteredData = []
+
 
         if (destacado === "DESTACADO") {
             filteredData = dataCard.filter(({ donation }) => {
@@ -21,6 +25,11 @@ const filteredCards = () =>{
             filteredData = dataCard.filter(({ donation }) => {
                 return donation === false
             })
+        }
+        
+        if (rubro && rubro !== "TODOS") {
+            const rubroValue = rubrosENUM[rubro]
+            filteredData = filteredData.filter(({ rubro }) => rubro === rubroValue)
         }
     
         dynamicUpdateCard(filteredData)
@@ -38,6 +47,8 @@ const dynamicUpdateCard = (filteredData) =>{
 
         cardContainer.innerHTML += cardHTML
     })
+
+    getMailOnClick(document.querySelectorAll("#onVerClick"))
 }
 
 const redesValidation = (redes) =>{
@@ -72,7 +83,7 @@ const generateCardHTML = (redesHTML, donation, {emprendimiento, nombre, telefono
                 <p style="color:#626567 "> <b>Dirección:</b> ${direccion}</p>
                 ${redesHTML}
                 <div>
-                    <button type="submit" id="onVerClick" data-email=${mail}>Ver</button>
+                    <button class="btn-generic btn-cuenta-pago" id="onVerClick" data-email=${mail}>Ver</button>
                     ${deshabilitarButtonHTML}
                 </div>
             </div>`
@@ -87,7 +98,7 @@ const generateCardHTML = (redesHTML, donation, {emprendimiento, nombre, telefono
                 <p style="color:#626567 "> <b>Dirección:</b> ${direccion}</p>
                 ${redesHTML}
                 <div>
-                    <button type="submit" id="onVerClick" data-email=${mail}>Ver</button>
+                    <button class="btn-generic btn-cuenta-pago" id="onVerClick" data-email=${mail}>Ver</button>
                     ${deshabilitarButtonHTML}
                 </div>
             </div>

@@ -5,7 +5,6 @@ const getCard = (mailToFilter) =>{
     alert(`Latitud: ${latitud}, Longitud: ${longitud}`)
 }
 
-
 const getMailOnClick = (buttons) =>{
     buttons.forEach( btn => {
         btn.addEventListener('click', e =>{
@@ -30,3 +29,5 @@ document.addEventListener('DOMContentLoaded', (e) => {
     */ 
     const intervalId = setInterval(checkElement, 100)
 })
+
+export default getMailOnClick

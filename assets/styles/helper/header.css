@@ -7,7 +7,7 @@ header nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px;
+    padding: 10px;
 }
 
 header nav ul{
@@ -20,4 +20,13 @@ header nav ul a{
     text-decoration: none;
     color: rgb(255, 255, 255);
     font-size: 1.1rem;
+}
+
+.logo-container{
+    width: 40px;
+}
+
+.logo-portal{
+    width: 100%;
+    object-fit: cover;
 }

@@ -1,6 +1,6 @@
 let dataCard = [
     {
-        emprendimiento: "Mantenimiento general del hogar",
+        emprendimiento: "Reparaciones Rápidas",
         nombre: "Alvaro Quintero",
         telefono: "123456789",
         mail:"alvaroq@mail.com",
@@ -14,11 +14,12 @@ let dataCard = [
         donation:true,
         deshabilitado: false,
         latitud: -34.521561, 
-        longitud: -58.701108
+        longitud: -58.701108,
+        rubro: "Mantenimiento general del hogar"
     },
     {
-        emprendimiento: "Catering y comida a domicilio",
-        nombre: "Sabores Caseros",
+        emprendimiento: "Sabores Caseros",
+        nombre: "Diego Rivero",
         telefono: "987654321",
         mail:"saborescaseros@mail.com",
         direccion: "Calle Falsa 213",
@@ -30,11 +31,12 @@ let dataCard = [
         donation:false,
         deshabilitado: false,
         latitud: -34.521561, 
-        longitud: -58.701108
+        longitud: -58.701108,
+        rubro: "Catering y comida a domicilio"
     },
     {
-        emprendimiento: "Servicio de lavandería",
-        nombre: "Lavandería Clean",
+        emprendimiento: "Lavandería Clean",
+        nombre: "Diana Robles",
         telefono: "456123789",
         mail:"lavanderiaclean@mail.com",
         direccion: "Calle Falsa 132",
@@ -47,11 +49,12 @@ let dataCard = [
         donation:false,
         deshabilitado: false,
         latitud: -34.521561, 
-        longitud: -58.701108
+        longitud: -58.701108,
+        rubro: "Servicio de lavandería"
     },
     {
-        emprendimiento: "Clases de música",
-        nombre: "Academia Musical Armonía",
+        emprendimiento: "Academia Musical Armonía",
+        nombre: "Sofía González",
         telefono: "789456123",
         mail:"armonia@mail.com",
         direccion: "Calle Falsa 312",
@@ -64,11 +67,12 @@ let dataCard = [
         donation:false,
         deshabilitado: false,
         latitud: -34.521561, 
-        longitud: -58.701108
+        longitud: -58.701108,
+        rubro: "Clases de música"
     },
     {
-        emprendimiento: "Servicio de jardinería",
-        nombre: "Jardines Verdes",
+        emprendimiento: "Jardines Verdes",
+        nombre: "Manuel Flores",
         telefono: "321654987",
         mail:"jardinesverdes@mail.com",
         direccion: "Calle Falsa 231",
@@ -82,11 +86,12 @@ let dataCard = [
         donation:false,
         deshabilitado: false,
         latitud: -34.521561, 
-        longitud: -58.701108
+        longitud: -58.701108,
+        rubro: "Servicio de jardinería"
     },
     {
-        emprendimiento: "Taller de reparación de bicicletas",
-        nombre: "BiciFix",
+        emprendimiento: "BiciFix",
+        nombre: "Natalia Martínez",
         telefono: "654987321",
         mail:"bicifix@mail.com",
         direccion: "Calle Falsa 213",
@@ -98,11 +103,12 @@ let dataCard = [
         donation:false,
         deshabilitado: false,
         latitud: -34.521561, 
-        longitud: -58.701108
+        longitud: -58.701108,
+        rubro: "Taller de reparación de bicicletas"
     },
     {
-        emprendimiento: "Tutoría y apoyo escolar",
-        nombre: "EducaTutores",
+        emprendimiento: "EducaTutores",
+        nombre: "Gabriela López",
         telefono: "987321654",
         mail:"educatutores@mail.com",
         direccion: "Calle Falsa 321",
@@ -114,11 +120,12 @@ let dataCard = [
         donation:false,
         deshabilitado: false,
         latitud: -34.521561, 
-        longitud: -58.701108
+        longitud: -58.701108,
+        rubro: "Tutoría y apoyo escolar"
     },
     {
-        emprendimiento: "Servicio de fotografía profesional",
-        nombre: "Instantáneas Creativas",
+        emprendimiento: "Instantáneas Creativas",
+        nombre: "Martín Gutiérrez",
         telefono: "147258369",
         mail:"instantaneas@mail.com",
         direccion: "Calle Falsa 231",
@@ -130,11 +137,12 @@ let dataCard = [
         donation:false,
         deshabilitado: false,
         latitud: -34.521561, 
-        longitud: -58.701108
+        longitud: -58.701108,
+        rubro: "Servicio de fotografía profesional"
     },
     {
-        emprendimiento: "Taller de carpintería y mueblería",
-        nombre: "Maderarte",
+        emprendimiento: "Maderarte",
+        nombre: "Carmen Sánchez",
         telefono: "369258147",
         mail:"info@maderarte.com",
         direccion: "Calle Falsa 312",
@@ -147,7 +155,8 @@ let dataCard = [
         donation:false,
         deshabilitado: false,
         latitud: -34.521561, 
-        longitud: -58.701108
+        longitud: -58.701108,
+        rubro: "Taller de carpintería y mueblería"
     }
 ]
 

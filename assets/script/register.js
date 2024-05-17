@@ -1,4 +1,5 @@
 import pendingNotifications from './notificaciones/pendingMember.js'
+import notificationHandler from './alerts/SwalAlerts.js'
 
 const handlerData = () =>{
     const email = document.getElementById('email').value
@@ -22,7 +23,11 @@ const handlerData = () =>{
         inicioTrabajo: inicioTrabajo,
         finTrabajo: finTrabajo,
         logoEmprendimiento:logoEmprendimiento,
-        isAcepted: false
+        isAcepted: false,
+        donation:false,
+        deshabilitado: false,
+        latitud: 0, 
+        longitud: 0,
     }
 
     let users = JSON.parse(localStorage.getItem('users')) || []
@@ -30,18 +35,14 @@ const handlerData = () =>{
     localStorage.setItem('users', JSON.stringify(users))
     
     pendingNotifications(userData)
-
-    Swal.fire({
-        title: "Usuario registrado",
-        text: "Cuando seas aceptado se te notificara via mail",
-        icon: "success",
-        showConfirmButton: false,
-        timer: 3000,
-        didClose: () => {
+    notificationHandler(
+        "Usuario registrado",
+        "Cuando seas aceptado se te notificará vía mail",
+        "success",
+        () => {
             window.location.href = '../../index.html';
         }
-    })
-
+    )
 }
 
 document.addEventListener('DOMContentLoaded', function () {

@@ -5,15 +5,15 @@ const modalPagoNet = document.getElementById('modal-pago-net')
 
 btnCuentaPago.addEventListener('click', () => {
     modalCuentaPago.style.display = 'block'
-});
+})
 
 btnPagoNet.addEventListener('click', () => {
     modalPagoNet.style.display = 'block'
-});
+})
 
 document.querySelectorAll('.close').forEach(closeBtn => {
     closeBtn.addEventListener('click', () => {
         modalCuentaPago.style.display = 'none'
         modalPagoNet.style.display = 'none'
-    });
-});
+    })
+})

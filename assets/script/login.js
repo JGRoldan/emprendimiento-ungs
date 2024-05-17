@@ -1,5 +1,6 @@
 import adminCredentials from './helper/admin.js'
 import {handlerDOM} from './helper/menu.js'
+import notificationHandler from './alerts/SwalAlerts.js'
 
 const login = () =>{
     localStorage.setItem('adminCredentials', JSON.stringify(adminCredentials))
@@ -7,12 +8,11 @@ const login = () =>{
 
     document.getElementById('login-form').addEventListener('submit', (e)=>{
         e.preventDefault()
-        handlerSubmit()
+        submitHandler()
     })
 }
 
-
-const handlerSubmit = () => {
+const submitHandler = () => {
     const adminCredentials = JSON.parse(localStorage.getItem('adminCredentials'))
     const email = document.getElementById('email').value
     const password = document.getElementById('psw').value
@@ -21,7 +21,7 @@ const handlerSubmit = () => {
 
     if (email === adminCredentials.USER && password === adminCredentials.PASSWORD) {
         localStorage.setItem('adminLogin', true)
-        handleSuccessfulLogin('ADMIN')
+        successFullLoginHandler('ADMIN')
         return;
     }
 
@@ -30,37 +30,34 @@ const handlerSubmit = () => {
     const user = acceptedUsers.find(user => user.email === email && user.password === password)
 
     if (user) {
-        handleSuccessfulLogin('USER')
+        successFullLoginHandler('USER')
         updateUserLogin(email, password, true)
         return
     }
 
-    handleInvalidCredentials()
+    invalidCredentialHandler()
 }
 
-const handleSuccessfulLogin = (name) => {
-    handlerDOM(name);
-    Swal.fire({
-        title: "Credenciales Válidas",
-        text: "Redirigiendo a la página principal",
-        icon: "success",
-        showConfirmButton: false,
-        timer: 1500,
-        didClose: () => {
-            window.location.href = '../../index.html';
+const successFullLoginHandler = (name) => {
+    handlerDOM(name)
+
+    notificationHandler(
+        "Credenciales Válidas",
+        "Redirigiendo a la página principal",
+        "success",
+        () => {
+            window.location.href = '../../index.html'
         }
-    })
+    )
     resetFields()
 }
 
-const handleInvalidCredentials = () => {
-    Swal.fire({
-        title: "Credenciales Inválidas",
-        text: "Vuelve a intentar",
-        icon: "error",
-        showConfirmButton: false,
-        timer: 1500
-    });
+const invalidCredentialHandler = () => {
+    notificationHandler(
+        "Credenciales Inválidas",
+        "Vuelve a intentar",
+        "error"
+    )
     resetFields()
 }
 
@@ -69,7 +66,7 @@ const updateUserLogin = (email, password, isLogged) => {
         email,
         password,
         isLogged
-    };
+    }
     localStorage.setItem('userLogin', JSON.stringify(userLogin))
 }
 

@@ -1,3 +1,5 @@
+import notificationHandler from './alerts/SwalAlerts.js'
+
 const dynamicUpdatePendiente = () => {
     const pendienteContainer = document.querySelector('.pendiente-card-container')
     let pendingUsers = JSON.parse(localStorage.getItem('users')) || undefined
@@ -6,7 +8,7 @@ const dynamicUpdatePendiente = () => {
         pendienteContainer.innerHTML = 'No hay emprendimientos por aceptar'
         return
     }
-    pendienteContainer.innerHTML = '';
+    pendienteContainer.innerHTML = ''
     
     pendingUsers.map(({email, nombreEmprendimiento, direccion, direccionVisible, rubro, inicioTrabajo, finTrabajo}) => {
         const pendingCard = generateHTML(email, nombreEmprendimiento, direccion, direccionVisible, rubro, inicioTrabajo, finTrabajo)
@@ -16,8 +18,8 @@ const dynamicUpdatePendiente = () => {
     const aceptarButtons = document.querySelectorAll('.aceptar-btn')
     const rechazarButtons = document.querySelectorAll('.rechazar-btn')
 
-    handlerAceptarButton(aceptarButtons, pendingUsers)
-    handlerRechazarButton(rechazarButtons, pendingUsers)
+    acceptButtonHandler(aceptarButtons, pendingUsers)
+    rejectButtonHandler(rechazarButtons, pendingUsers)
 
 }
 
@@ -42,7 +44,7 @@ const generateHTML = (email, nombreEmprendimiento, direccion, direccionVisible, 
     `
 }
 
-const handlerAceptarButton = (aceptarButtons, pendingUsers) =>{
+const acceptButtonHandler = (aceptarButtons, pendingUsers) =>{
     aceptarButtons.forEach(button => {
         button.addEventListener('click', () =>{
             const userEmail = button.parentElement.parentElement.dataset.user
@@ -68,21 +70,18 @@ const handlerAceptarButton = (aceptarButtons, pendingUsers) =>{
             const remainingUsers = updatedUsers.filter(user => !user.isAcepted)
             localStorage.setItem('users', JSON.stringify(remainingUsers))
 
-
-            Swal.fire({
-                title: "Nuevo miembro aceptado",
-                text: "Se enviara un mail al miembro",
-                icon: "success",
-                showConfirmButton: false,
-                timer: 3000,
-            })
+            notificationHandler(
+                "Nuevo miembro aceptado",
+                "Se enviara un mail al miembro",
+                "success",
+            )
 
             dynamicUpdatePendiente()
         })
     })
 }
 
-const handlerRechazarButton = (rechazarButtons, pendingUsers) =>{
+const rejectButtonHandler = (rechazarButtons, pendingUsers) =>{
     rechazarButtons.forEach(button => {
         button.addEventListener('click', () => {
             const userEmail = button.parentElement.parentElement.dataset.user
@@ -93,14 +92,12 @@ const handlerRechazarButton = (rechazarButtons, pendingUsers) =>{
             localStorage.setItem('users', JSON.stringify(updatedUsers))
             console.log(updatedUsers)
 
-            Swal.fire({
-                title: "Aspirante a miembro borrado",
-                text: "Se enviara un mail al aspirante",
-                icon: "success",
-                showConfirmButton: false,
-                timer: 3000,
-            })
-            
+            notificationHandler(
+                "Aspirante a miembro borrado",
+                "Se enviara un mail al aspirante",
+                "success"
+            )
+
             dynamicUpdatePendiente()
         })
     })

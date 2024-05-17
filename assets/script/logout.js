@@ -1,3 +1,5 @@
+import notificationHandler from "./alerts/SwalAlerts.js"
+
 const logoutBtn = document.getElementById('logoutLink')
 
 logoutBtn.addEventListener('click', ()=>{
@@ -9,15 +11,12 @@ logoutBtn.addEventListener('click', ()=>{
     localStorage.setItem('userLogin', JSON.stringify(userLogin))
 
     localStorage.setItem('adminLogin', false)
-
-    Swal.fire({
-        title: "Cerrando sesión",
-        text: "Hasta la próxima",
-        icon: "warning",
-        showConfirmButton: false,
-        timer: 1500,
-        // didClose: () => {
-        //     window.location.href = 'https://jgroldan.github.io/emprendimiento-ungs/index.html';
-        // }
-    })
+    notificationHandler(
+        "Cerrando sesión",
+        "Hasta la próxima",
+        "warning",
+        () => {
+            window.location.href = '../../index.html'
+        }
+    )
 })

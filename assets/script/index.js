@@ -6,9 +6,9 @@ const filteredCards = () =>{
     const formMain = document.getElementById('form-main');
 
     formMain.addEventListener('submit', (e) => {
-        e.preventDefault();
+        e.preventDefault()
         const destacado = document.getElementById('destacado').value
-        let filteredData = [];
+        let filteredData = []
 
         if (destacado === "DESTACADO") {
             filteredData = dataCard.filter(({ donation }) => {
@@ -54,7 +54,6 @@ const redesValidation = (redes) =>{
     }
 }
 
-
 const generateCardHTML = (redesHTML, donation, {emprendimiento, nombre, telefono, mail, direccion}) => {
 
     const isAdminLoggedIn = localStorage.getItem('adminLogin') === "true"
@@ -73,7 +72,7 @@ const generateCardHTML = (redesHTML, donation, {emprendimiento, nombre, telefono
                 <p style="color:#626567 "> <b>Dirección:</b> ${direccion}</p>
                 ${redesHTML}
                 <div>
-                    <button type="submit">Ver</button>
+                    <button type="submit" id="onVerClick" data-email=${mail}>Ver</button>
                     ${deshabilitarButtonHTML}
                 </div>
             </div>`
@@ -88,7 +87,7 @@ const generateCardHTML = (redesHTML, donation, {emprendimiento, nombre, telefono
                 <p style="color:#626567 "> <b>Dirección:</b> ${direccion}</p>
                 ${redesHTML}
                 <div>
-                    <button type="submit">Ver</button>
+                    <button type="submit" id="onVerClick" data-email=${mail}>Ver</button>
                     ${deshabilitarButtonHTML}
                 </div>
             </div>

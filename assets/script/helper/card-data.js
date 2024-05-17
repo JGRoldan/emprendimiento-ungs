@@ -11,7 +11,10 @@ let dataCard = [
             facebook: "alvaro quintero",
             tiktok:"asd"
         },
-        donation:true
+        donation:true,
+        deshabilitado: false,
+        latitud: -34.521561, 
+        longitud: -58.701108
     },
     {
         emprendimiento: "Catering y comida a domicilio",
@@ -24,7 +27,10 @@ let dataCard = [
             instagram: "@saborescaseros",
             facebook: "Sabores Caseros",
         },
-        donation:false
+        donation:false,
+        deshabilitado: false,
+        latitud: -34.521561, 
+        longitud: -58.701108
     },
     {
         emprendimiento: "Servicio de lavandería",
@@ -38,7 +44,10 @@ let dataCard = [
             facebook: "Lavandería Clean",
             youtube: "-"
         },
-        donation:false
+        donation:false,
+        deshabilitado: false,
+        latitud: -34.521561, 
+        longitud: -58.701108
     },
     {
         emprendimiento: "Clases de música",
@@ -52,7 +61,10 @@ let dataCard = [
             facebook: "Academia Musical Armonía",
             tiktok:"asd"
         },
-        donation:false
+        donation:false,
+        deshabilitado: false,
+        latitud: -34.521561, 
+        longitud: -58.701108
     },
     {
         emprendimiento: "Servicio de jardinería",
@@ -67,7 +79,10 @@ let dataCard = [
             youtube: "-",
             tiktok:"asd"
         },
-        donation:false
+        donation:false,
+        deshabilitado: false,
+        latitud: -34.521561, 
+        longitud: -58.701108
     },
     {
         emprendimiento: "Taller de reparación de bicicletas",
@@ -80,7 +95,10 @@ let dataCard = [
             instagram: "@bicifix",
             facebook: "BiciFix",
         },
-        donation:false
+        donation:false,
+        deshabilitado: false,
+        latitud: -34.521561, 
+        longitud: -58.701108
     },
     {
         emprendimiento: "Tutoría y apoyo escolar",
@@ -93,7 +111,10 @@ let dataCard = [
             instagram: "@educatutores",
             facebook: "EducaTutores",
         },
-        donation:false
+        donation:false,
+        deshabilitado: false,
+        latitud: -34.521561, 
+        longitud: -58.701108
     },
     {
         emprendimiento: "Servicio de fotografía profesional",
@@ -106,7 +127,10 @@ let dataCard = [
             instagram: "@instantaneascreativas",
             facebook: "Instantáneas Creativas",
         },
-        donation:false
+        donation:false,
+        deshabilitado: false,
+        latitud: -34.521561, 
+        longitud: -58.701108
     },
     {
         emprendimiento: "Taller de carpintería y mueblería",
@@ -120,7 +144,10 @@ let dataCard = [
             facebook: "Maderarte",
             youtube:"-"
         },
-        donation:false
+        donation:false,
+        deshabilitado: false,
+        latitud: -34.521561, 
+        longitud: -58.701108
     }
 ]
 

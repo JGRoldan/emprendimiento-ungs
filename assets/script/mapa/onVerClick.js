@@ -13,21 +13,21 @@ const getMailOnClick = (buttons) =>{
     })
 }
 
-document.addEventListener('DOMContentLoaded', (e) => {
-    const checkElement = () => {
-        const verButtons = document.querySelectorAll("#onVerClick")
-        if (verButtons) {
-            clearInterval(intervalId)
-            getMailOnClick(verButtons)
-        }
-    }
+// document.addEventListener('DOMContentLoaded', (e) => {
+//     const checkElement = () => {
+//         const verButtons = document.querySelectorAll("#onVerClick")
+//         if (verButtons) {
+//             clearInterval(intervalId)
+//             getMailOnClick(verButtons)
+//         }
+//     }
 
-    /*
-    Problema = El DOM carga antes de este archivo.js, entonces al leer verMapa da null.
-    La solucion fue crear un intervalo para que pregunte constantemente si el archivo existe.
-    Si existe para ese proceso y devuelve el verMapa.
-    */ 
-    const intervalId = setInterval(checkElement, 100)
-})
+//     /*
+//     Problema = El DOM carga antes de este archivo.js, entonces al leer verMapa da null.
+//     La solucion fue crear un intervalo para que pregunte constantemente si el archivo existe.
+//     Si existe para ese proceso y devuelve el verMapa.
+//     */ 
+//     const intervalId = setInterval(checkElement, 100)
+// })
 
 export default getMailOnClick

@@ -2,6 +2,7 @@ import {handlerDOM} from './helper/menu.js';
 import rubrosENUM from './helper/rubros.js';
 import dataCard from './helper/card-data.js';
 import getMailOnClick from './mapa/onVerClick.js';
+import getCardOnClick from './pendientes.js';
 
 const filteredCards = () =>{
     const formMain = document.getElementById('form-main');
@@ -49,6 +50,9 @@ const dynamicUpdateCard = (filteredData) =>{
     })
 
     getMailOnClick(document.querySelectorAll("#onVerClick"))
+    if(localStorage.getItem('adminLogin') == "true"){
+        getCardOnClick(document.querySelectorAll("#onDeshabilitarClick"))
+    }
 }
 
 const redesValidation = (redes) =>{
@@ -69,7 +73,7 @@ const generateCardHTML = (redesHTML, donation, {emprendimiento, nombre, telefono
 
     const isAdminLoggedIn = localStorage.getItem('adminLogin') === "true"
     const deshabilitarButtonHTML = isAdminLoggedIn 
-        ? '<button class="btn-generic deshabilitar-btn">Deshabilitar</button>' 
+        ? `<button class="btn-generic deshabilitar-btn" id="onDeshabilitarClick" data-email=${mail}>Deshabilitar</button>` 
         : ''
 
     return donation 

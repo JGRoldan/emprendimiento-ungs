@@ -1,14 +1,18 @@
 import notificationHandler from './alerts/SwalAlerts.js'
+import dataCard from './helper/card-data.js'
 
 const dynamicUpdatePendiente = () => {
     const pendienteContainer = document.querySelector('.pendiente-card-container')
     let pendingUsers = JSON.parse(localStorage.getItem('users')) || undefined
     
-    if (pendingUsers === undefined || pendingUsers.length === 0) {
-        pendienteContainer.innerHTML = 'No hay emprendimientos por aceptar'
-        return
+    if(pendienteContainer !== null){
+        if (pendingUsers === undefined || pendingUsers.length === 0) {
+            pendienteContainer.innerHTML = 'No hay emprendimientos por aceptar'
+            return
+        }
+        pendienteContainer.innerHTML = ''
     }
-    pendienteContainer.innerHTML = ''
+
     
     pendingUsers.map(({email, nombreEmprendimiento, direccion, direccionVisible, rubro, inicioTrabajo, finTrabajo}) => {
         const pendingCard = generateHTML(email, nombreEmprendimiento, direccion, direccionVisible, rubro, inicioTrabajo, finTrabajo)
@@ -104,6 +108,24 @@ const rejectButtonHandler = (rechazarButtons, pendingUsers) =>{
     
 }
 
+/*Este codigo se repite en onVerClick.js
+Solo devuelve el emprendimiento despues de filtrarlo por el mail
+*/
+const getCard = (mailToFilter) =>{
+    const data = dataCard.filter(card => card.mail === mailToFilter)[0]
+    console.log(data)
+}
+
+const getCardOnClick = (buttons) =>{
+    buttons.forEach( btn => {
+        btn.addEventListener('click', e =>{
+            getCard(e.target.getAttribute("data-email"))
+        })
+    })
+}
+
 document.addEventListener('DOMContentLoaded', ()=>{
     dynamicUpdatePendiente()
 })
+
+export default getCardOnClick

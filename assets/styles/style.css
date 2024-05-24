@@ -44,8 +44,42 @@ ul li{list-style: none;}
     font-family: "Playfair Display", serif;
 }
 
+.contenedor-mapa{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+    background-color: #fefefe;
+}
+
+#map {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 500px;
+    height: 500px;
+}
+.close-mapa {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close-mapa:hover {
+    cursor: pointer;
+}
+
 @keyframes scroll {
     to{
         translate: calc(-4*15rem);
+    }
+}
+@media (max-width: 768px) {
+    #map {
+        width: 300px;
+        height: 300px;
     }
 }

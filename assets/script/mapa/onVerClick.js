@@ -1,8 +1,9 @@
 import dataCard from '../helper/card-data.js'
+import mostrarMapa from '../api/mapa.js'
 
 const getCard = (mailToFilter) =>{
     const {latitud, longitud} = dataCard.filter(card => card.mail === mailToFilter)[0]
-    alert(`Latitud: ${latitud}, Longitud: ${longitud}`)
+    mostrarMapa(latitud, longitud)
 }
 
 const getMailOnClick = (buttons) =>{

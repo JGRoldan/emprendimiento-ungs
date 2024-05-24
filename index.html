@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>📌Portal Emprendimientos</title>
     <link rel="stylesheet" href="./assets/styles/style.css"> 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+     <!-- MAPA  -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/> 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
 </head>
 <body>
     <div class="main-container">
@@ -77,6 +84,11 @@
                 </a>
             </div>
         </div>
+        <div class="contenedor-mapa">
+            <span class="close-mapa">&times;</span>
+            <div id="map">
+            </div>
+        </div>
         <footer>
             ©2024 Ing.Soft.I - Designed by Sebastian | Franco | Mauro | Gaston 
         </footer>
@@ -84,5 +96,6 @@
     <script src="./assets/script/index.js" type="module" defer></script>
     <script src="./assets/script/logout.js" type="module"></script>
     <script src="./assets/script/mapa/onVerClick.js" type="module"></script>
+    <script src="./assets/script/api/mapa.js" type="module" ></script>
 </body>
 </html>

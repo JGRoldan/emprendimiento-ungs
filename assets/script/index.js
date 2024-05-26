@@ -1,7 +1,7 @@
 import {handlerDOM} from './helper/menu.js';
 import rubrosENUM from './helper/rubros.js';
 import dataCard from './helper/card-data.js';
-import getMailOnClick from './mapa/onVerClick.js';
+import getCardData from './helper/getCardData.js';
 import getCardOnClick from './pendientes.js';
 
 const filteredCards = () =>{
@@ -49,7 +49,7 @@ const dynamicUpdateCard = (filteredData) =>{
         cardContainer.innerHTML += cardHTML
     })
 
-    getMailOnClick(document.querySelectorAll("#onVerClick"))
+    getCardData(document.querySelectorAll("#onVerClick"))
     if(localStorage.getItem('adminLogin') == "true"){
         getCardOnClick(document.querySelectorAll("#onDeshabilitarClick"))
     }

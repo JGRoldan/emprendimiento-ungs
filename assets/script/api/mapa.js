@@ -1,3 +1,4 @@
+let map;
 const mostrarMapa = (x, y) =>{
     
     const mapa = document.querySelector('.contenedor-mapa')
@@ -9,7 +10,11 @@ const mostrarMapa = (x, y) =>{
         })
     })
 
-    const map = L.map('map', {
+    if (map) {
+        map.remove();
+    }
+    
+    map = L.map('map', {
         center: [x, y],
         zoom: 14
     })

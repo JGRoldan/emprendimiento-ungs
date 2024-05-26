@@ -108,7 +108,7 @@ const rejectButtonHandler = (rechazarButtons, pendingUsers) =>{
     
 }
 
-/*Este codigo se repite en onVerClick.js
+/*Este codigo se repite en getCardData.js
 Solo devuelve el emprendimiento despues de filtrarlo por el mail
 */
 const getCard = (mailToFilter) =>{

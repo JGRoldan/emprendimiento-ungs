@@ -30,8 +30,8 @@ let dataCard = [
         },
         donation:false,
         deshabilitado: false,
-        latitud: -34.521561, 
-        longitud: -58.701108,
+        latitud: -34.508508, 
+        longitud:-58.682671,
         rubro: "Catering y comida a domicilio"
     },
     {

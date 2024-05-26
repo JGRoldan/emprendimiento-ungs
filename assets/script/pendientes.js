@@ -1,6 +1,28 @@
 import notificationHandler from './alerts/SwalAlerts.js'
 import dataCard from './helper/card-data.js'
 
+const dynamicUpdateDisabled = () => {
+    const disabledContainer = document.querySelector('.disabled-card-container')
+    let pendingDisabledUser = JSON.parse(localStorage.getItem('disabledUser')) || undefined
+    
+    if(disabledContainer !== null){
+        if (pendingDisabledUser === undefined || pendingDisabledUser.length === 0) {
+            disabledContainer.innerHTML = 'No hay emprendimientos por habilitar'
+            return
+        }
+        disabledContainer.innerHTML = ''
+    }
+
+    pendingDisabledUser.map(({mail, emprendimiento, direccion, direccionVisible, nombre, telefono, detalle}) => {
+        const pendingCard = generateHTML(mail, emprendimiento, direccion, direccionVisible, nombre, telefono, detalle)
+        disabledContainer.innerHTML += pendingCard
+    })
+    
+    const aceptarButtons = document.querySelectorAll('.btn-disabled')
+
+    // enabledMiembro(aceptarButtons, pendingDisabledUser) implementar
+}
+
 const dynamicUpdatePendiente = () => {
     const pendienteContainer = document.querySelector('.pendiente-card-container')
     let pendingUsers = JSON.parse(localStorage.getItem('users')) || undefined
@@ -13,9 +35,10 @@ const dynamicUpdatePendiente = () => {
         pendienteContainer.innerHTML = ''
     }
 
+
     
-    pendingUsers.map(({email, nombreEmprendimiento, direccion, direccionVisible, rubro, inicioTrabajo, finTrabajo}) => {
-        const pendingCard = generateHTML(email, nombreEmprendimiento, direccion, direccionVisible, rubro, inicioTrabajo, finTrabajo)
+    pendingUsers.map(({mail, emprendimiento, direccion, direccionVisible, nombre, telefono, detalle}) => {
+        const pendingCard = generateHTML(mail, emprendimiento, direccion, direccionVisible, nombre, telefono, detalle)
         pendienteContainer.innerHTML += pendingCard
     })
     
@@ -27,17 +50,15 @@ const dynamicUpdatePendiente = () => {
 
 }
 
-const generateHTML = (email, nombreEmprendimiento, direccion, direccionVisible, rubro, inicioTrabajo, finTrabajo) =>{
+const generateHTML = (mail, emprendimiento, direccion, direccionVisible, nombre, telefono, detalle) =>{
     return `
-        <div class="pendiente-card" data-user=${email}>
+        <div class="pendiente-card" data-user=${mail}>
             <div class="pendiente-data">
-                <h4>${nombreEmprendimiento}</h4>
-                <p>FALTA PEDIR NOMBRE DE USR EN EL REGISTRO</p>
+                <h4>${emprendimiento}</h4>
+                <p>${nombre}</p>
                 <p>${direccion}</p>
-                <p>FALTA PEDIR CONTACTO DE USR EN EL REGISTRO</p>
-                <p>Desde ${inicioTrabajo} hasta ${finTrabajo} </p>
-                <p>FALTA PEDIR RESUMEN DE EMPRENDIMIENTO EN EL REGISTRO</p>
-                <p>FALTA PEDIR REDES DE EMPRENDIMIENTO EN EL REGISTRO</p>
+                <p>${telefono}</p>
+                <p>${detalle}</p>
                 <button class="btn-pendientes aceptar-btn">ACEPTAR</button>
                 <button class="btn-pendientes rechazar-btn">RECHAZAR</button>
             </div>
@@ -108,12 +129,14 @@ const rejectButtonHandler = (rechazarButtons, pendingUsers) =>{
     
 }
 
-/*Este codigo se repite en getCardData.js
-Solo devuelve el emprendimiento despues de filtrarlo por el mail
-*/
+// Este codigo se repite en getCardData.js
 const getCard = (mailToFilter) =>{
     const data = dataCard.filter(card => card.mail === mailToFilter)[0]
-    console.log(data)
+    
+    let disabledUser = JSON.parse(localStorage.getItem('disabledUser')) || []
+    disabledUser.push(data)
+    
+    localStorage.setItem('disabledUser', JSON.stringify(disabledUser))
 }
 
 const getCardOnClick = (buttons) =>{
@@ -126,6 +149,7 @@ const getCardOnClick = (buttons) =>{
 
 document.addEventListener('DOMContentLoaded', ()=>{
     dynamicUpdatePendiente()
+    dynamicUpdateDisabled()
 })
 
 export default getCardOnClick

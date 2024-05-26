@@ -1,7 +1,7 @@
 import dataCard from '../helper/card-data.js'
 import mostrarMapa from '../api/mapa.js'
 
-const getCard = (mailToFilter) =>{
+const getLatitudLongitud = (mailToFilter) =>{
     const {latitud, longitud} = dataCard.filter(card => card.mail === mailToFilter)[0]
     mostrarMapa(latitud, longitud)
 }
@@ -9,7 +9,7 @@ const getCard = (mailToFilter) =>{
 const getCardData = (buttons) =>{
     buttons.forEach( btn => {
         btn.addEventListener('click', e =>{
-            getCard(e.target.getAttribute("data-email"))
+            getLatitudLongitud(e.target.getAttribute("data-email"))
         })
     })
 }

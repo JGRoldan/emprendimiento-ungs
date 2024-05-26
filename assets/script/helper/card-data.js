@@ -83,7 +83,7 @@ let dataCard = [
             youtube: "-",
             tiktok:"asd"
         },
-        donation:false,
+        donation:true,
         deshabilitado: false,
         latitud: -34.521561, 
         longitud: -58.701108,

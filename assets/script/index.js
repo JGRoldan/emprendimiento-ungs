@@ -41,7 +41,8 @@ const dynamicUpdateCard = (filteredData) =>{
     const cardContainer = document.querySelector('.card-container')
 
     cardContainer.innerHTML = ''
-
+    filteredData.sort((a, b) => (b.donation === true) - (a.donation === true))
+    
     filteredData.map( ({emprendimiento, nombre, telefono, mail, direccion, redes, donation}) => {
         let redesHTML = redesValidation(redes)
         const cardHTML = generateCardHTML(redesHTML, donation, {emprendimiento, nombre, telefono, mail, direccion})
@@ -126,9 +127,11 @@ const dynamicUpdateRubros = () =>{
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
+    localStorage.setItem('disabledUser', JSON.stringify([]))
     if(localStorage.getItem('adminLogin') == "true"){
         handlerDOM('ADMIN')
     }
+
 
     const userLogin = JSON.parse(localStorage.getItem('userLogin')) || []
 

@@ -12,12 +12,12 @@ aside {
 
 aside h2 {margin-bottom: 20px;}
 
-.pendiente-card-container {
+.pendiente-card-container,.disabled-card-container {
     display: flex;
     flex-direction: column;
 }
 
-.pendiente-card {
+.pendiente-card, .disabled-card {
     display: flex;
     margin-bottom: 10px;
     background-color: rgb(255, 255, 255);
@@ -26,20 +26,20 @@ aside h2 {margin-bottom: 20px;}
     -moz-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.18);
 }
 
-.pendiente-data {
+.pendiente-data, .disabled-data {
     width: 60%;
     align-self: center;
     padding: 20px;
 }
-.pendiente-data > * {
+.pendiente-data > *, .disabled-data > * {
     margin-bottom: 5px; /* Agregar espacio entre elementos */
 }
 
-.pendiente-mapa {
+.pendiente-mapa, .disabled-mapa {
     width: 40%;
 }
 
-.btn-pendientes{
+.btn-pendientes, .btn-disabled{
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -72,14 +72,14 @@ aside h2 {margin-bottom: 20px;}
         width: 100%;
     }
 
-    .pendiente-card {
+    .pendiente-card, .disabled-card {
         flex-direction: column;
     }
 
-    .pendiente-data, .pendiente-mapa {
+    .pendiente-data, .pendiente-mapa, .disabled-data, .disabled-mapa {
         width: 100%;
     }
-    .pendiente-mapa{
+    .pendiente-mapa, .disabled-mapa{
         height: 200px;
     }
 }

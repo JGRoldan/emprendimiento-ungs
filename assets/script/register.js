@@ -1,5 +1,6 @@
 import pendingNotifications from './notificaciones/pendingMember.js'
 import notificationHandler from './alerts/SwalAlerts.js'
+import obtenerDireccionNormalizada from './api/normalizar.js'
 
 const handlerData = () =>{
     const email = document.getElementById('email').value
@@ -47,6 +48,17 @@ const handlerData = () =>{
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('login-form')
+
+    document.getElementById('direccion').addEventListener('change', async function() {
+        const direccion = this.value
+        const res = await obtenerDireccionNormalizada(direccion)
+        if(res.direccionesNormalizadas.length > 1){
+            alert('Dirección invalida. Ingresa el siguiente foramato ......')
+            return
+        }
+
+        console.log({x:res.direccionesNormalizadas[0].coordenadas.x, y:res.direccionesNormalizadas[0].coordenadas.y})
+    })
 
     form.addEventListener('submit', e => {
         e.preventDefault()

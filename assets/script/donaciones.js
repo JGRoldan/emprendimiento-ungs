@@ -1,3 +1,5 @@
+import notificationHandler from './alerts/SwalAlerts.js'
+
 const btnCuentaPago = document.querySelector('.btn-cuenta-pago')
 const btnPagoNet = document.querySelector('.btn-pago-net')
 const modalCuentaPago = document.getElementById('modal-cuenta-pago')
@@ -20,3 +22,14 @@ document.querySelectorAll('.close').forEach(closeBtn => {
         modalPagoNet.style.display = 'none'
     })
 })
+
+document.querySelectorAll('.btn-pagar').forEach(btn =>{
+    btn.addEventListener('click', () => {
+        notificationHandler(
+            "Donación realizada",
+            "Gracias por su donación",
+            "success"
+        )
+    })
+})
+

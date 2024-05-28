@@ -127,7 +127,8 @@ const dynamicUpdateRubros = () =>{
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
-    localStorage.setItem('disabledUser', JSON.stringify([]))
+    // localStorage.setItem('disabledUser', JSON.stringify([]))
+    // localStorage.setItem('donations', JSON.stringify([]))
     if(localStorage.getItem('adminLogin') == "true"){
         handlerDOM('ADMIN')
     }
@@ -143,3 +144,5 @@ document.addEventListener('DOMContentLoaded', ()=>{
     filteredCards()
     dynamicUpdateRubros()
 })
+
+export default dynamicUpdateCard

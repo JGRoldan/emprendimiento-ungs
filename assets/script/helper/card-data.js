@@ -48,8 +48,8 @@ let dataCard = [
         },
         donation:false,
         deshabilitado: false,
-        latitud: -34.521561, 
-        longitud: -58.701108,
+        latitud:  -34.516738,
+        longitud: -58.706952,
         rubro: "Servicio de lavandería"
     },
     {
@@ -66,8 +66,8 @@ let dataCard = [
         },
         donation:false,
         deshabilitado: false,
-        latitud: -34.521561, 
-        longitud: -58.701108,
+        latitud: -34.521038, 
+        longitud: -58.703593,
         rubro: "Clases de música"
     },
     {
@@ -85,8 +85,8 @@ let dataCard = [
         },
         donation:true,
         deshabilitado: false,
-        latitud: -34.521561, 
-        longitud: -58.701108,
+        latitud: -34.523309, 
+        longitud: -58.696469,
         rubro: "Servicio de jardinería"
     },
     {
@@ -102,62 +102,10 @@ let dataCard = [
         },
         donation:false,
         deshabilitado: false,
-        latitud: -34.521561, 
-        longitud: -58.701108,
+        latitud: -34.525858, 
+        longitud: -58.700322,
         rubro: "Taller de reparación de bicicletas"
     },
-    {
-        emprendimiento: "EducaTutores",
-        nombre: "Gabriela López",
-        telefono: "987321654",
-        mail:"educatutores@mail.com",
-        direccion: "Calle Falsa 321",
-        detalle: "Brindamos clases particulares y apoyo en todas las materias escolares.",
-        redes:{
-            instagram: "@educatutores",
-            facebook: "EducaTutores",
-        },
-        donation:false,
-        deshabilitado: false,
-        latitud: -34.521561, 
-        longitud: -58.701108,
-        rubro: "Tutoría y apoyo escolar"
-    },
-    {
-        emprendimiento: "Instantáneas Creativas",
-        nombre: "Martín Gutiérrez",
-        telefono: "147258369",
-        mail:"instantaneas@mail.com",
-        direccion: "Calle Falsa 231",
-        detalle: "Capturamos tus momentos especiales con creatividad y profesionalismo.",
-        redes:{
-            instagram: "@instantaneascreativas",
-            facebook: "Instantáneas Creativas",
-        },
-        donation:false,
-        deshabilitado: false,
-        latitud: -34.521561, 
-        longitud: -58.701108,
-        rubro: "Servicio de fotografía profesional"
-    },
-    {
-        emprendimiento: "Maderarte",
-        nombre: "Carmen Sánchez",
-        telefono: "369258147",
-        mail:"info@maderarte.com",
-        direccion: "Calle Falsa 312",
-        detalle: "Creamos muebles a medida y realizamos reparaciones de carpintería con materiales de alta calidad.",
-        redes:{
-            instagram: "@maderarte",
-            facebook: "Maderarte",
-            youtube:"-"
-        },
-        donation:false,
-        deshabilitado: false,
-        latitud: -34.521561, 
-        longitud: -58.701108,
-        rubro: "Taller de carpintería y mueblería"
-    }
 ]
 
 export default dataCard

@@ -8,7 +8,10 @@ btnCuentaPago.addEventListener('click', () => {
 })
 
 btnPagoNet.addEventListener('click', () => {
+    const sucursal = document.getElementById('random-sucursal')
+    sucursal.innerHTML = Math.floor(Math. random()*100) + 1 
     modalPagoNet.style.display = 'block'
+
 })
 
 document.querySelectorAll('.close').forEach(closeBtn => {

@@ -1,5 +1,6 @@
 import notificationHandler from './alerts/SwalAlerts.js'
 import dataCard from './helper/card-data.js'
+import dynamicUpdateCard from '../script/index.js'
 
 const dynamicUpdateDisabled = () => {
     const disabledContainer = document.querySelector('.disabled-card-container')
@@ -132,10 +133,8 @@ const rejectButtonHandler = (rechazarButtons, pendingUsers) =>{
 // Este codigo se repite en getCardData.js
 const getCard = (mailToFilter) =>{
     const data = dataCard.filter(card => card.mail === mailToFilter)[0]
-    
     let disabledUser = JSON.parse(localStorage.getItem('disabledUser')) || []
     disabledUser.push(data)
-    
     localStorage.setItem('disabledUser', JSON.stringify(disabledUser))
 }
 
@@ -143,6 +142,7 @@ const getCardOnClick = (buttons) =>{
     buttons.forEach( btn => {
         btn.addEventListener('click', e =>{
             getCard(e.target.getAttribute("data-email"))
+            
         })
     })
 }

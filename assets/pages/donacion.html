@@ -37,7 +37,17 @@
         <div id="modal-cuenta-pago" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <p>Información sobre Cuenta Pago...</p>
+                <div class="cuenta-pago-container">
+                    <h2>CUENTA PAGO</h2>
+                    <p> <b>Metodo Seleccionado:</b> Transferencia</p>
+                    <div>
+                        <p> <b>Ingrese la cantidad a transferir</b></p>
+                        <input style="width: 100px;" type="number" name="cuenta-pago-monto" id="cuenta-pago-monto" min="100">
+                    </div>
+                    <div>
+                        <button class="btn-generic btn-pagar">PAGAR</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -45,7 +55,17 @@
         <div id="modal-pago-net" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <p>Información sobre Pago Net...</p>
+                <div class="pago-net-container">
+                    <h2>PAGO NET</h2>
+                    <p> <b>Metodo Seleccionado:</b> Pago en sucursal <span id="random-sucursal"></span></p>
+                    <div>
+                        <p> <b>Ingrese la cantidad a pagar</b></p>
+                        <input style="width: 100px;" type="number" name="pago-net-monto" id="pago-net-monto" min="100">
+                    </div>
+                    <div>
+                        <button class="btn-generic btn-pagar">PAGAR</button>
+                    </div>
+                </div>
             </div>
         </div>
         <footer>

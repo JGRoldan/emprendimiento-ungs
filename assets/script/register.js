@@ -46,14 +46,32 @@ const handlerData = () =>{
     )
 }
 
+
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('login-form')
+    const modalRegister = document.getElementById('modal-register')
+    const btnClose = document.querySelector('.close')
+    const ulDirecciones = document.querySelector('.lista-direcciones')
 
     document.getElementById('direccion').addEventListener('change', async function() {
         const direccion = this.value
         const res = await obtenerDireccionNormalizada(direccion)
+        
         if(res.direccionesNormalizadas.length > 1){
-            alert('Dirección invalida. Ingresa el siguiente foramato ......')
+            modalRegister.style.display = 'block'
+
+            ulDirecciones.innerHTML = '';
+            
+            res.direccionesNormalizadas.forEach(direccion => {
+                const li = document.createElement('li')
+                li.innerHTML = `<b>Dirección:</b> ${direccion.direccion})`
+                ulDirecciones.appendChild(li)
+            })
+
+
+            btnClose.addEventListener('click', () => {
+                modalRegister.style.display = 'none'
+            })
             return
         }
 
@@ -64,5 +82,6 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault()
         handlerData()
         form.reset()
-    });
-});
+    })
+})
+

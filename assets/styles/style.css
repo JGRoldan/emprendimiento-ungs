@@ -72,6 +72,10 @@ ul li{list-style: none;}
     cursor: pointer;
 }
 
+.lista-direcciones li{
+    list-style: disc;
+}
+
 @keyframes scroll {
     to{
         translate: calc(-4*15rem);

@@ -1,10 +1,10 @@
-import {handlerDOM} from './helper/menu.js';
+import handlerDOM from './helper/menu.js';
 import rubrosENUM from './helper/rubros.js';
 import dataCard from './helper/card-data.js';
 import getCardData from './helper/getCardData.js';
 import getCardOnClick from './pendientes.js';
 
-const filteredCards = () =>{
+const filteredCards = (storedData) =>{
     const formMain = document.getElementById('form-main');
 
     formMain.addEventListener('submit', (e) => {
@@ -16,14 +16,14 @@ const filteredCards = () =>{
 
 
         if (destacado === "DESTACADO") {
-            filteredData = dataCard.filter(({ donation }) => {
+            filteredData = storedData.filter(({ donation }) => {
                 return donation === true
             })
         } else if (destacado === "TODOS") {
-            filteredData = dataCard
+            filteredData = storedData
         }
         else if (destacado === "NODESTACADO") {
-            filteredData = dataCard.filter(({ donation }) => {
+            filteredData = storedData.filter(({ donation }) => {
                 return donation === false
             })
         }
@@ -39,8 +39,8 @@ const filteredCards = () =>{
 
 const dynamicUpdateCard = (filteredData) =>{
     const cardContainer = document.querySelector('.card-container')
-
     cardContainer.innerHTML = ''
+
     filteredData.sort((a, b) => (b.donation === true) - (a.donation === true))
     
     filteredData.map( ({emprendimiento, nombre, telefono, mail, direccion, redes, donation}) => {
@@ -127,21 +127,22 @@ const dynamicUpdateRubros = () =>{
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
-    // localStorage.setItem('disabledUser', JSON.stringify([]))
-    // localStorage.setItem('donations', JSON.stringify([]))
+    const dataCardJSON = JSON.stringify(dataCard)
+    const storedData = JSON.parse(localStorage.getItem('dataCard') || dataCardJSON)
+    const userLogin = JSON.parse(localStorage.getItem('userLogin')) || []
+
+    //localStorage.setItem('dataCard', JSON.stringify(dataCard))
+
     if(localStorage.getItem('adminLogin') == "true"){
         handlerDOM('ADMIN')
     }
-
-
-    const userLogin = JSON.parse(localStorage.getItem('userLogin')) || []
 
     if(localStorage.getItem('adminLogin') == "false" && userLogin.isLogged == true){
         handlerDOM(userLogin.email.split('@')[0])
     }
 
-    dynamicUpdateCard(dataCard)
-    filteredCards()
+    dynamicUpdateCard(storedData)
+    filteredCards(storedData)
     dynamicUpdateRubros()
 })
 

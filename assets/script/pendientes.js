@@ -1,5 +1,4 @@
 import notificationHandler from './alerts/SwalAlerts.js'
-import dataCard from './helper/card-data.js'
 import dynamicUpdateCard from '../script/index.js'
 
 const dynamicUpdateDisabled = () => {
@@ -19,9 +18,53 @@ const dynamicUpdateDisabled = () => {
         disabledContainer.innerHTML += pendingCard
     })
     
-    const aceptarButtons = document.querySelectorAll('.btn-disabled')
+    const aceptarButtons = document.querySelectorAll('.aceptar-btn')
+    const rechazarButtons = document.querySelectorAll('.rechazar-btn')
+    enabledMiembro(aceptarButtons, pendingDisabledUser)
+    disabledMiembro(rechazarButtons, pendingDisabledUser)
+}
 
-    // enabledMiembro(aceptarButtons, pendingDisabledUser) implementar
+const enabledMiembro = (aceptarButtons, pendingDisabledUser) =>{
+    let dataCard = JSON.parse(localStorage.getItem('dataCard')) || []
+
+    aceptarButtons.forEach(button => {
+        button.addEventListener('click', () =>{
+            const userEmail = button.parentElement.parentElement.dataset.user
+            button.parentElement.parentElement.remove()
+
+            const userIndex = pendingDisabledUser.findIndex(user => user.mail === userEmail)
+            
+            if (userIndex !== -1) {
+                const user = pendingDisabledUser.splice(userIndex, 1)[0]
+                dataCard.push(user)
+
+                localStorage.setItem('disabledUser', JSON.stringify(pendingDisabledUser))
+                localStorage.setItem('dataCard', JSON.stringify(dataCard))
+
+                dynamicUpdateDisabled()
+                dynamicUpdateCard(dataCard)
+            }
+        })
+    })
+}
+
+const disabledMiembro = (rechazarButtons, pendingDisabledUser) => {
+    
+    rechazarButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const userEmail = button.parentElement.parentElement.dataset.user
+            button.parentElement.parentElement.remove()
+            
+            const userIndex = pendingDisabledUser.findIndex(user => user.mail === userEmail)
+            
+            if (userIndex !== -1) {
+                pendingDisabledUser.splice(userIndex, 1)
+                localStorage.setItem('disabledUser', JSON.stringify(pendingDisabledUser));
+            }
+            
+            dynamicUpdateDisabled()
+        })
+    })
 }
 
 const dynamicUpdatePendiente = () => {
@@ -130,12 +173,18 @@ const rejectButtonHandler = (rechazarButtons, pendingUsers) =>{
     
 }
 
-// Este codigo se repite en getCardData.js
 const getCard = (mailToFilter) =>{
-    const data = dataCard.filter(card => card.mail === mailToFilter)[0]
+    let dataCard = JSON.parse(localStorage.getItem('dataCard'));
+    let data = dataCard.filter(card => card.mail === mailToFilter)[0]
     let disabledUser = JSON.parse(localStorage.getItem('disabledUser')) || []
+    
+    dataCard = dataCard.filter(card => card.mail !== mailToFilter)
+    localStorage.setItem('dataCard', JSON.stringify(dataCard))
+
     disabledUser.push(data)
     localStorage.setItem('disabledUser', JSON.stringify(disabledUser))
+
+    dynamicUpdateCard(dataCard)
 }
 
 const getCardOnClick = (buttons) =>{

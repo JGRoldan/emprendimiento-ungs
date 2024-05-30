@@ -1,6 +1,7 @@
 import pendingNotifications from './notificaciones/pendingMember.js'
 import notificationHandler from './alerts/SwalAlerts.js'
 import obtenerDireccionNormalizada from './api/normalizar.js'
+import mostrarMapa from '../script/api/mapa.js'
 
 const handlerData = () =>{
     const email = document.getElementById('email').value
@@ -46,9 +47,7 @@ const handlerData = () =>{
     )
 }
 
-
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('login-form')
+const normalizarDireccionyMapa = () =>{
     const modalRegister = document.getElementById('modal-register')
     const btnClose = document.querySelector('.close')
     const ulDirecciones = document.querySelector('.lista-direcciones')
@@ -57,6 +56,18 @@ document.addEventListener('DOMContentLoaded', function () {
         const direccion = this.value
         const res = await obtenerDireccionNormalizada(direccion)
         
+        if(res.direccionesNormalizadas.length === 0){
+            modalRegister.style.display = 'block'
+            const error = res.errorMessage
+
+            ulDirecciones.innerHTML = error;
+            
+
+            btnClose.addEventListener('click', () => {
+                modalRegister.style.display = 'none'
+            })
+            return
+        }
         if(res.direccionesNormalizadas.length > 1){
             modalRegister.style.display = 'block'
 
@@ -64,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
             
             res.direccionesNormalizadas.forEach(direccion => {
                 const li = document.createElement('li')
-                li.innerHTML = `<b>Dirección:</b> ${direccion.direccion})`
+                li.innerHTML = `<b>Dirección:</b> ${direccion.direccion}`
                 ulDirecciones.appendChild(li)
             })
 
@@ -75,8 +86,23 @@ document.addEventListener('DOMContentLoaded', function () {
             return
         }
 
-        console.log({x:res.direccionesNormalizadas[0].coordenadas.x, y:res.direccionesNormalizadas[0].coordenadas.y})
+        if(res.direccionesNormalizadas.length === 1){
+            mostrarMapa(res.direccionesNormalizadas[0].coordenadas.y, res.direccionesNormalizadas[0].coordenadas.x)
+            
+            btnClose.addEventListener('click', () => {
+                modalRegister.style.display = 'none'
+            })
+
+            return
+        }
+
     })
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('login-form')
+    
+    normalizarDireccionyMapa()
 
     form.addEventListener('submit', e => {
         e.preventDefault()

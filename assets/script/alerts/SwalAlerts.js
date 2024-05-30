@@ -7,7 +7,7 @@ const notificationHandler = (title, text, icon, callback = null) => {
         timer: 3000,
         didClose: () => {
             if (callback) {
-                callback();
+                callback()
             }
         }
     })

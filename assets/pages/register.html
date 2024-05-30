@@ -6,6 +6,13 @@
     <title>Registrarse</title>
     <link rel="stylesheet" href="../styles/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- MAPA  -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/> 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
 </head>
 <body>
     <div class="main-container">
@@ -20,8 +27,11 @@
                     <a href="../../index.html">
                         <li>Home</li>
                     </a>
-                    <a href="#" id="registerLink">
+                    <a href="#" id="registerLink" style="display:none;">
                         <li>Register</li>
+                    </a>
+                    <a href="#" id="loginLink">
+                        <li>Login</li>
                     </a>
                 </ul>
             </nav>
@@ -79,6 +89,11 @@
                 </div>
             </div>
         </section>
+        <div class="contenedor-mapa" style="z-index: 100;">
+            <span class="close-mapa">&times;</span>
+            <div id="map">
+            </div>
+        </div>
         <footer>
             ©2024 Ing.Soft.I - Designed by Sebastian | Franco | Mauro | Gaston 
         </footer>

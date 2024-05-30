@@ -3,6 +3,8 @@ import notificationHandler from './alerts/SwalAlerts.js'
 import obtenerDireccionNormalizada from './api/normalizar.js'
 import mostrarMapa from '../script/api/mapa.js'
 
+let x,y;
+
 const handlerData = () =>{
     const email = document.getElementById('email').value
     const password = document.getElementById('password').value
@@ -16,20 +18,20 @@ const handlerData = () =>{
     //Si no se ingresa logo es undefined
     
     const userData = {
-        email: email,
+        mail: email,
         password: password,
-        nombreEmprendimiento: nombreEmprendimiento,
+        emprendimiento: nombreEmprendimiento,
         direccion: direccion,
         direccionVisible: direccionVisible,
         rubro: rubro,
-        inicioTrabajo: inicioTrabajo,
-        finTrabajo: finTrabajo,
+        horaInicio: inicioTrabajo,
+        HoraFin: finTrabajo,
         logoEmprendimiento:logoEmprendimiento,
         isAcepted: false,
         donation:false,
         deshabilitado: false,
-        latitud: 0, 
-        longitud: 0,
+        latitud: x || 0, 
+        longitud: y || 0,
     }
 
     let users = JSON.parse(localStorage.getItem('users')) || []
@@ -89,6 +91,9 @@ const normalizarDireccionyMapa = () =>{
         if(res.direccionesNormalizadas.length === 1){
             mostrarMapa(res.direccionesNormalizadas[0].coordenadas.y, res.direccionesNormalizadas[0].coordenadas.x)
             
+            x = res.direccionesNormalizadas[0].coordenadas.y
+            y = res.direccionesNormalizadas[0].coordenadas.x
+
             btnClose.addEventListener('click', () => {
                 modalRegister.style.display = 'none'
             })
@@ -101,7 +106,7 @@ const normalizarDireccionyMapa = () =>{
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('login-form')
-    
+
     normalizarDireccionyMapa()
 
     form.addEventListener('submit', e => {

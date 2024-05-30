@@ -1,5 +1,5 @@
 import adminCredentials from './helper/admin.js'
-import {handlerDOM} from './helper/menu.js'
+import handlerDOM from './helper/menu.js'
 import notificationHandler from './alerts/SwalAlerts.js'
 
 const login = () =>{
@@ -17,7 +17,7 @@ const submitHandler = () => {
     const email = document.getElementById('email').value
     const password = document.getElementById('psw').value
 
-    console.log(password)
+    console.log(adminCredentials)
 
     if (email === adminCredentials.USER && password === adminCredentials.PASSWORD) {
         localStorage.setItem('adminLogin', true)
@@ -62,11 +62,12 @@ const invalidCredentialHandler = () => {
 }
 
 const updateUserLogin = (email, password, isLogged) => {
-    const userLogin = {
+    const userLogin = [{
         email,
         password,
-        isLogged
-    }
+        isLogged,
+        dateFirstLogin
+    }]
     localStorage.setItem('userLogin', JSON.stringify(userLogin))
 }
 

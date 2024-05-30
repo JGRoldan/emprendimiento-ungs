@@ -43,9 +43,9 @@ const dynamicUpdateCard = (filteredData) =>{
 
     filteredData.sort((a, b) => (b.donation === true) - (a.donation === true))
     
-    filteredData.map( ({emprendimiento, nombre, telefono, mail, direccion, redes, donation}) => {
+    filteredData.map( ({emprendimiento, nombre, telefono, mail, direccion, redes, donation, horaInicio, horaFin}) => {
         let redesHTML = redesValidation(redes)
-        const cardHTML = generateCardHTML(redesHTML, donation, {emprendimiento, nombre, telefono, mail, direccion})
+        const cardHTML = generateCardHTML(redesHTML, donation, {emprendimiento, nombre, telefono, mail, direccion, horaInicio, horaFin})
 
         cardContainer.innerHTML += cardHTML
     })
@@ -70,7 +70,7 @@ const redesValidation = (redes) =>{
     }
 }
 
-const generateCardHTML = (redesHTML, donation, {emprendimiento, nombre, telefono, mail, direccion}) => {
+const generateCardHTML = (redesHTML, donation, {emprendimiento, nombre, telefono, mail, direccion, horaInicio, horaFin}) => {
 
     const isAdminLoggedIn = localStorage.getItem('adminLogin') === "true"
     const deshabilitarButtonHTML = isAdminLoggedIn 
@@ -86,6 +86,7 @@ const generateCardHTML = (redesHTML, donation, {emprendimiento, nombre, telefono
                 <p style="color:#626567 "> <b>Whatsapp:</b> ${telefono}</p>
                 <p style="color:#626567 "> <b>Mail:</b> ${mail}</p>
                 <p style="color:#626567 "> <b>Dirección:</b> ${direccion}</p>
+                <p style="color:#626567 "> <b>Horario laboral:</b> ${horaInicio} - ${horaFin}</p>
                 ${redesHTML}
                 <div>
                     <button class="btn-generic btn-cuenta-pago" id="onVerClick" data-email=${mail}>Ver</button>
@@ -101,6 +102,7 @@ const generateCardHTML = (redesHTML, donation, {emprendimiento, nombre, telefono
                 <p style="color:#626567 "> <b>Whatsapp:</b> ${telefono}</p>
                 <p style="color:#626567 "> <b>Mail:</b> ${mail}</p>
                 <p style="color:#626567 "> <b>Dirección:</b> ${direccion}</p>
+                <p style="color:#626567 "> <b>Horario laboral:</b> ${horaInicio} - ${horaFin}</p>
                 ${redesHTML}
                 <div>
                     <button class="btn-generic btn-cuenta-pago" id="onVerClick" data-email=${mail}>Ver</button>

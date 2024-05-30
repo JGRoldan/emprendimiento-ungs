@@ -102,6 +102,7 @@ const generateHTML = (mail, emprendimiento, direccion, direccionVisible, nombre,
                 <p>${nombre}</p>
                 <p>${direccion}</p>
                 <p>${telefono}</p>
+                <p>${mail}</p>
                 <p>${detalle}</p>
                 <button class="btn-pendientes aceptar-btn">ACEPTAR</button>
                 <button class="btn-pendientes rechazar-btn">RECHAZAR</button>
@@ -117,26 +118,28 @@ const acceptButtonHandler = (aceptarButtons, pendingUsers) =>{
     aceptarButtons.forEach(button => {
         button.addEventListener('click', () =>{
             const userEmail = button.parentElement.parentElement.dataset.user
+            const acceptedUsers = JSON.parse(localStorage.getItem('usersAccepted')) || []
+            const dataCard = JSON.parse(localStorage.getItem('dataCard'))
+            
             button.parentElement.parentElement.remove()
-
+            
             const updatedUsers = pendingUsers.map(user => {
                 if (user.email === userEmail) {
                     user.isAcepted = true
                 }
                 return user
             })
+            const remainingUsers = updatedUsers.filter(user => !user.isAcepted)
 
-            const acceptedUsers = JSON.parse(localStorage.getItem('usersAccepted')) || []
-            
             updatedUsers.forEach(user => {
                 if (user.isAcepted) {
                     acceptedUsers.push(user)
+                    dataCard.push(user)
                 }
             })
 
             localStorage.setItem('usersAccepted', JSON.stringify(acceptedUsers))
-
-            const remainingUsers = updatedUsers.filter(user => !user.isAcepted)
+            localStorage.setItem('dataCard', JSON.stringify(dataCard))
             localStorage.setItem('users', JSON.stringify(remainingUsers))
 
             notificationHandler(

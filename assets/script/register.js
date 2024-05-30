@@ -25,7 +25,7 @@ const handlerData = () =>{
         direccionVisible: direccionVisible,
         rubro: rubro,
         horaInicio: inicioTrabajo,
-        HoraFin: finTrabajo,
+        horaFin: finTrabajo,
         logoEmprendimiento:logoEmprendimiento,
         isAcepted: false,
         donation:false,

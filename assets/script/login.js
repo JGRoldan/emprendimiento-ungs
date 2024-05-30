@@ -66,7 +66,7 @@ const updateUserLogin = (email, password, isLogged) => {
         email,
         password,
         isLogged,
-        dateFirstLogin
+        "dateFirstLogin":(new Date()).toDateString()
     }]
     localStorage.setItem('userLogin', JSON.stringify(userLogin))
 }

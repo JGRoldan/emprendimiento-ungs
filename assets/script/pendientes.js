@@ -124,7 +124,7 @@ const acceptButtonHandler = (aceptarButtons, pendingUsers) =>{
             button.parentElement.parentElement.remove()
             
             const updatedUsers = pendingUsers.map(user => {
-                if (user.email === userEmail) {
+                if (user.mail === userEmail) {
                     user.isAcepted = true
                 }
                 return user

@@ -52,6 +52,11 @@ ul li{list-style: none;}
     transform: translate(-50%, -50%);
     overflow: auto;
     background-color: #fefefe;
+    max-width: 530px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.18);
+    -webkit-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.18);
+    -moz-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.18);
 }
 
 #map {

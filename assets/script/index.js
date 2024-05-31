@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     /* Si se borran todos los emprendimientos descomentar la linea de abajo y recargar pagina.
     Despues comentarla nuevamente*/
-    localStorage.setItem('dataCard', JSON.stringify(dataCard))
+    //localStorage.setItem('dataCard', JSON.stringify(dataCard))
 
     if(localStorage.getItem('adminLogin') == "true"){
         handlerDOM('ADMIN')

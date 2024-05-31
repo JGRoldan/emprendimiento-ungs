@@ -60,7 +60,7 @@ const handlerData = () =>{
         "Cuando seas aceptado se te notificará vía mail",
         "success",
         () => {
-            window.location.href = '../../index.html'
+            window.location.href = 'https://jgroldan.github.io/emprendimiento-ungs/index.html'
         }
     )
 }

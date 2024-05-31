@@ -46,7 +46,7 @@ const successFullLoginHandler = (name) => {
         "Redirigiendo a la página principal",
         "success",
         () => {
-            window.location.href = '../../index.html'
+            window.location.href = 'https://jgroldan.github.io/emprendimiento-ungs/index.html'
         }
     )
     resetFields()

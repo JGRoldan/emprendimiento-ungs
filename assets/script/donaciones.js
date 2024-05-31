@@ -27,73 +27,46 @@ document.querySelectorAll('.close').forEach(closeBtn => {
     })
 })
 
-if(btnDonacionPagoNet){
-    btnDonacionPagoNet.addEventListener('click', (e) => {
-            const pagoNet = document.getElementById('pago-net-monto')
-            const monto = pagoNet.value
-
-            if (monto) {
-                const donacion = {
-                    monto: parseFloat(monto).toLocaleString("es-AR", {style:"currency", currency:"ARG"}),
-                    fecha: new Date().toLocaleString(),
-                    metodo: 'Pago Net',
-                    numeroSucursal
-                }
-    
-                let reporteDonacion = JSON.parse(localStorage.getItem('reporteDonacion')) || []
-                reporteDonacion.push(donacion)
-                localStorage.setItem('reporteDonacion', JSON.stringify(reporteDonacion))
-                notificationHandler(
-                    "Donación realizada",
-                    "Gracias por su donación",
-                    "success"
-                )
-
-                pagoNet.value =''
-            }
-            else{
-                notificationHandler(
-                    "Donación rechazada",
-                    "Ingresa un monto",
-                    "error"
-                )
-            }
+if (btnDonacionPagoNet) {
+    btnDonacionPagoNet.addEventListener('click', () => {
+        handleDonation('pago-net-monto', 'Pago Net', numeroSucursal)
     })
 }
 
-if (btnDonacionCuentaPago){
-    btnDonacionCuentaPago.addEventListener('click', (e) => {
-        const cuentaPago = document.getElementById('cuenta-pago-monto')
-        const monto = cuentaPago.value
-        
-        if (monto) {
-            const donacion = {
-                monto: parseFloat(monto).toLocaleString("es-AR", {style:"currency", currency:"ARG"}),
-                fecha: new Date().toLocaleString(),
-                metodo: 'Cuenta Pago',
-            }
-
-            let reporteDonacion = JSON.parse(localStorage.getItem('reporteDonacion')) || []
-            reporteDonacion.push(donacion)
-            localStorage.setItem('reporteDonacion', JSON.stringify(reporteDonacion))
-            notificationHandler(
-                "Donación realizada",
-                "Gracias por su donación",
-                "success"
-            )
-            cuentaPago.value=''
-        }
-        else{
-            notificationHandler(
-                "Donación rechazada",
-                "Ingresa un monto",
-                "error"
-            )
-        }
-    
-        
+if (btnDonacionCuentaPago) {
+    btnDonacionCuentaPago.addEventListener('click', () => {
+        handleDonation('cuenta-pago-monto', 'Cuenta Pago');
     })
 }
 
+const handleDonation = (inputId, method, numeroSucursal = null) => {
+    const inputElement = document.getElementById(inputId)
+    const monto = inputElement.value
+    
+    if (monto && Number(monto) >= 100) {
+        const donacion = {
+            monto: parseFloat(monto).toLocaleString("es-AR", {style: "currency", currency: "ARS"}),
+            fecha: new Date().toLocaleString(),
+            metodo: method,
+            numeroSucursal: numeroSucursal
+        }
 
+        let reporteDonacion = JSON.parse(localStorage.getItem('reporteDonacion')) || []
+        reporteDonacion.push(donacion)
+        localStorage.setItem('reporteDonacion', JSON.stringify(reporteDonacion))
 
+        notificationHandler(
+            "Donación realizada",
+            "Gracias por su donación",
+            "success"
+        )
+
+        inputElement.value = ''
+    } else {
+        notificationHandler(
+            "Donación rechazada",
+            "Ingresa un monto superior a $100. ",
+            "error"
+        )
+    }
+}

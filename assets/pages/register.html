@@ -40,6 +40,7 @@
             <div class="form">
                 <form class="login-form" id="login-form">
                     <h4 class="datos">Ingresa tus datos personales</h4>
+                    <input type="text" placeholder="Nombre completo" id="nombre-miembro" required/>
                     <input type="email" placeholder="Ingrese su email" id="email" required/>
                     <input type="password" placeholder="Ingrese su contraseña" id="password" required/>
 
@@ -66,10 +67,16 @@
                             <option value="PROGRAMACION">Servicio freelancer de programación</option>
                         </select>
                     </div>
-                    <div>
+                    <div style="padding: 10px;">
                         <label for="horario-trabajo">Seleccione el rango horario:</label>
-                        <input type="time" name="inicio-trabajo" id="inicio-trabajo" required>
-                        <input type="time" name="fin-trabajo" id="fin-trabajo" required>
+                        <div style="display:flex; gap:10px">
+                            <input type="time" name="inicio-trabajo" id="inicio-trabajo" required>
+                            <input type="time" name="fin-trabajo" id="fin-trabajo" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="">Detalle su emprendimiento:</label>
+                        <textarea name="" id="" cols="40" rows="6"></textarea>
                     </div>
                     <div>
                         <label for="logo-emprendimiento">Seleccione logo o imagen (no es obligatorio):</label>

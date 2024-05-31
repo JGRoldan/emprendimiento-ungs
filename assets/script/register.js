@@ -15,6 +15,13 @@ const handlerData = () =>{
     const inicioTrabajo = document.getElementById('inicio-trabajo').value
     const finTrabajo = document.getElementById('fin-trabajo').value
     const logoEmprendimiento = document.getElementById('logo-emprendimiento').files[0] 
+    const nombreMiembro = document.getElementById('nombre-miembro').value
+    const detalleEmprendimiento = document.getElementById('detalle-emprendimiento').value
+    const instagram = document.getElementById('instagram').value
+    const facebook = document.getElementById('facebook').value
+    const youtube = document.getElementById('youtube').value
+    const tiktok = document.getElementById('tiktok').value
+    const telefono  = document.getElementById('telefono-miembro').value
     //Si no se ingresa logo es undefined
     
     const userData = {
@@ -32,6 +39,15 @@ const handlerData = () =>{
         deshabilitado: false,
         latitud: x || 0, 
         longitud: y || 0,
+        nombre: nombreMiembro,
+        detalle: detalleEmprendimiento,
+        telefono: telefono,
+        redes:{
+            instagram: instagram || null,
+            youtube: youtube || null,
+            facebook: facebook || null,
+            tiktok: tiktok || null
+        }
     }
 
     let users = JSON.parse(localStorage.getItem('users')) || []

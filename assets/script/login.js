@@ -22,7 +22,7 @@ const submitHandler = () => {
     if (email === adminCredentials.USER && password === adminCredentials.PASSWORD) {
         localStorage.setItem('adminLogin', true)
         successFullLoginHandler('ADMIN')
-        return;
+        return
     }
 
     const acceptedUsers = JSON.parse(localStorage.getItem('usersAccepted')) || []

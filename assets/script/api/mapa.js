@@ -11,7 +11,7 @@ const mostrarMapa = (x, y) =>{
     })
 
     if (map) {
-        map.remove();
+        map.remove()
     }
     
     map = L.map('map', {

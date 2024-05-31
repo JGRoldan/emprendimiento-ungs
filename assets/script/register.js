@@ -60,7 +60,7 @@ const handlerData = () =>{
         "Cuando seas aceptado se te notificará vía mail",
         "success",
         () => {
-            window.location.href = '../../index.html';
+            window.location.href = '../../index.html'
         }
     )
 }
@@ -78,7 +78,7 @@ const normalizarDireccionyMapa = () =>{
             modalRegister.style.display = 'block'
             const error = res.errorMessage
 
-            ulDirecciones.innerHTML = error;
+            ulDirecciones.innerHTML = error
             
 
             btnClose.addEventListener('click', () => {
@@ -89,7 +89,7 @@ const normalizarDireccionyMapa = () =>{
         if(res.direccionesNormalizadas.length > 1){
             modalRegister.style.display = 'block'
 
-            ulDirecciones.innerHTML = '';
+            ulDirecciones.innerHTML = ''
             
             res.direccionesNormalizadas.forEach(direccion => {
                 const li = document.createElement('li')

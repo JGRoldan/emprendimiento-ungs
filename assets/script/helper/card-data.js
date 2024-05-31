@@ -17,7 +17,7 @@ let dataCard = [
         longitud: -58.701108,
         rubro: "Mantenimiento general del hogar",
         horaInicio:"10:00",
-        horaFin: "18:00"
+        horaFin: "18:00",
     },
     {
         emprendimiento: "Sabores Caseros",
@@ -36,7 +36,7 @@ let dataCard = [
         longitud:-58.682671,
         rubro: "Catering y comida a domicilio",
         horaInicio:"10:00",
-        horaFin: "18:00"
+        horaFin: "18:00",
     },
     {
         emprendimiento: "Lavandería Clean",
@@ -56,7 +56,7 @@ let dataCard = [
         longitud: -58.706952,
         rubro: "Servicio de lavandería",
         horaInicio:"10:00",
-        horaFin: "18:00"
+        horaFin: "18:00",
     },
     {
         emprendimiento: "Academia Musical Armonía",
@@ -76,7 +76,7 @@ let dataCard = [
         longitud: -58.703593,
         rubro: "Clases de música",
         horaInicio:"10:00",
-        horaFin: "18:00"
+        horaFin: "18:00",
     },
     {
         emprendimiento: "Jardines Verdes",
@@ -97,7 +97,7 @@ let dataCard = [
         longitud: -58.696469,
         rubro: "Servicio de jardinería",
         horaInicio:"10:00",
-        horaFin: "18:00"
+        horaFin: "18:00",
     },
     {
         emprendimiento: "BiciFix",
@@ -116,7 +116,7 @@ let dataCard = [
         longitud: -58.700322,
         rubro: "Taller de reparación de bicicletas",
         horaInicio:"10:00",
-        horaFin: "18:00"
+        horaFin: "18:00",
     },
 ]
 

@@ -39,6 +39,12 @@ const filteredCards = (storedData) =>{
 
 const dynamicUpdateCard = (filteredData) =>{
     const cardContainer = document.querySelector('.card-container')
+    
+    if(filteredData.length === 0) {
+        cardContainer.innerHTML = 'No hay emprendimientos en el portal.'
+        return
+    }
+
     cardContainer.innerHTML = ''
 
     filteredData.sort((a, b) => (b.donation === true) - (a.donation === true))
@@ -133,6 +139,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const storedData = JSON.parse(localStorage.getItem('dataCard') || dataCardJSON)
     const userLogin = JSON.parse(localStorage.getItem('userLogin')) || []
 
+    /* Si se borran todos los emprendimientos descomentar la linea de abajo y recargar pagina.
+    Despues comentarla nuevamente*/
     //localStorage.setItem('dataCard', JSON.stringify(dataCard))
 
     if(localStorage.getItem('adminLogin') == "true"){

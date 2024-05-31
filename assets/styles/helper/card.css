@@ -1,3 +1,8 @@
+.contenedor-card{
+    display: flex;
+    flex-direction: column;
+}
+
 .filter-card-container{
     width: 100%;
     display: flex;
